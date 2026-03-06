@@ -1,9 +1,9 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ═══════════════════════════════════════════════════════════════════════
-// FOOTER — Dark theme per Figma (#41545c bg, white text)
-// ═══════════════════════════════════════════════════════════════════════
+// 
+// FOOTER - Dark theme per Figma (#41545c bg, white text)
+// 
 .site-footer {
   background-color: var(--color-blue);
   color: var(--color-white);

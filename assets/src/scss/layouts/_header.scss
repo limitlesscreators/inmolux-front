@@ -1,9 +1,9 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ═══════════════════════════════════════════════════════════════════════
+// 
 // SITE HEADER (position overlay)
-// ═══════════════════════════════════════════════════════════════════════
+// 
 .site-header {
   position: absolute;
   top: 0;
@@ -85,9 +85,9 @@
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
-// LIGHT VARIANT (front page — white text over dark hero)
-// ═══════════════════════════════════════════════════════════════════════
+// 
+// LIGHT VARIANT (front page - white text over dark hero)
+// 
 .site-header--light:not(.site-header--scrolled) {
   color: var(--color-white);
 
@@ -142,10 +142,10 @@
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
+// 
 // DESKTOP HEADER (two-row, ≥1200px)
 // Base = 1200px values, 1920px overrides via breakpoint-up
-// ═══════════════════════════════════════════════════════════════════════
+// 
 .header-desktop {
   @include container;
   padding-top: 18px;
@@ -574,11 +574,11 @@
 }
 
 
-// ═══════════════════════════════════════════════════════════════════════
+// 
 // MOBILE HEADER (< 1200px)
 // 768px: burger + EN + logo | CTA + separator
 // 360px: burger | logo | CTA (no separator, no EN)
-// ═══════════════════════════════════════════════════════════════════════
+// 
 .header-mobile {
   @include container;
   padding-top: 12px; // Для 360px (до линии отступ 15px, боковые идут от container)
@@ -782,9 +782,9 @@
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
+// 
 // MOBILE MENU OVERLAY
-// ═══════════════════════════════════════════════════════════════════════
+// 
 .mobile-menu-overlay {
   position: fixed;
   top: 0;
@@ -946,9 +946,9 @@
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
+// 
 // VISIBILITY UTILITIES
-// ═══════════════════════════════════════════════════════════════════════
+// 
 .hide-on-mobile {
   @include breakpoint-down($bp-tablet) {
     display: none !important;

@@ -1,0 +1,89 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// @font-face declarations
+// Прямые пути (без Sass-интерполяции) — Vite резолвит относительно файла
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ─── Felidae (статический, один weight) ──────────────────────────────────
+@font-face {
+  font-family: 'Felidae';
+  src: url('../../fonts/Felidae.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ─── Inter (вариативный) ─────────────────────────────────────────────────
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-VariableFont.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ─── Manrope (вариативный) ──────────────────────────────────────────────
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../fonts/Manrope-VariableFont.ttf') format('truetype-variations');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ─── Vela Sans (вариативный GX) ─────────────────────────────────────────
+@font-face {
+  font-family: 'Vela Sans';
+  src: url('../../fonts/VelaSans-GX.ttf') format('truetype-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ─── Bellota Text (статический, 3 weight × normal/italic) ───────────────
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url('../../fonts/BellotaText-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}

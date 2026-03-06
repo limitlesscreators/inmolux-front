@@ -1,0 +1,127 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Typography Hierarchy based on Figma
+
+// H1 - Desktop 1920: 80px / 1200: 50px / 768: 35px
+h1, .h1 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 88px;
+  letter-spacing: 1.6px;
+  color: var(--text-black);
+  margin-bottom: 24px;
+  -webkit-text-stroke: 0.2px currentColor;
+
+  @include breakpoint-down($bp-desktop) {
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: 1px;
+  }
+
+  @include breakpoint-down($bp-tablet) {
+    font-size: 35px;
+    line-height: 38.5px;
+    letter-spacing: 0.7px;
+    margin-bottom: 16px;
+  }
+}
+
+// H2 - Desktop 1920: 80px / 1200: 50px / 768: 35px / 360: 30px
+h2, .h2 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 80px; // 1920px
+  line-height: 88px;
+  letter-spacing: 1.6px;
+  color: var(--text-black);
+  margin-bottom: 20px;
+  -webkit-text-stroke: 0.2px currentColor;
+  white-space: pre-line; // Respect newlines from ACF textarea
+  word-break: break-word; // Allow safe line breaks
+  overflow-wrap: break-word; // Allow safe line breaks
+  hyphens: auto; // Allow safe line breaks
+
+  @include breakpoint-down($bp-desktop) {
+    font-size: 50px; // 1200px
+    line-height: 55px;
+    letter-spacing: 1px;
+  }
+
+  @include breakpoint-down($bp-laptop) {
+    font-size: 35px; // 768px
+    line-height: 38.5px;
+    letter-spacing: 0.7px;
+  }
+
+  @include breakpoint-down($bp-tablet) {
+    font-size: 30px; // 360px
+    line-height: 33px;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+}
+
+// T1 - Desktop 1920: 25px / 1200: 20px / 768: 14px
+.text-t1 {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 32.5px;
+  color: var(--text-gray-90);
+  margin-bottom: 16px;
+
+  @include breakpoint-down($bp-desktop) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include breakpoint-down($bp-tablet) {
+    font-size: 14px;
+    line-height: 18.2px;
+    margin-bottom: 10px;
+  }
+}
+
+// T2 - Desktop 1920: 32px / 1200: 16px / 768: 14px
+.text-t2 {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 38.4px;
+  color: var(--text-gray-90);
+
+  @include breakpoint-down($bp-desktop) {
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+
+  @include breakpoint-down($bp-tablet) {
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+}
+
+// Additional text styles
+.text-small {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-gray-5);
+
+  @include breakpoint-down($bp-tablet) {
+    font-size: 12px;
+  }
+}
+
+.text-accent {
+  font-family: var(--font-accent);
+  font-weight: 500;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+}

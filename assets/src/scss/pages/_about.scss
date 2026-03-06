@@ -1,0 +1,244 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==========================================================================
+// ABOUT PAGE STYLES
+// ==========================================================================
+
+.page-about {
+  // Hero Section
+  .about-hero {
+    position: relative;
+    padding-top: var(--header-height-desktop);
+    padding-bottom: clamp(60px, 8vw, 120px);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .breadcrumbs {
+      margin-top: clamp(20px, 4vw, 40px);
+      margin-bottom: auto;
+    }
+
+    &__content {
+      margin-top: clamp(40px, 8vw, 80px);
+      max-width: 1000px;
+    }
+
+    &__title {
+      @include fluid-text(40, 80);
+      font-family: var(--font-accent);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0;
+    }
+  }
+
+  // Awards Section
+  .about-awards {
+    .section-header {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: clamp(50px, 6vw, 80px);
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(30px, 4vw, 40px);
+      align-items: center;
+
+      @include media-up(md) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .award-item {
+      text-align: center;
+
+      &__img {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          object-fit: contain;
+          opacity: 0.6;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover img {
+          opacity: 1;
+        }
+      }
+
+      &__title {
+        @include fluid-text(14, 16);
+        color: var(--color-text-light);
+        margin: 0;
+      }
+    }
+  }
+
+  // Team Section
+  .about-team {
+    .section-header {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: clamp(50px, 6vw, 80px);
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      @include media-up(sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .team-card {
+      background: var(--color-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &__image {
+        aspect-ratio: 3/4;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+      }
+
+      &:hover &__image img {
+        transform: scale(1.05);
+      }
+
+      &__content {
+        padding: clamp(20px, 3vw, 30px);
+        text-align: center;
+      }
+
+      &__name {
+        @include fluid-text(20, 24);
+        font-family: var(--font-accent);
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+
+      &__role {
+        @include fluid-text(15, 16);
+        color: var(--color-text-light);
+        margin-bottom: 15px;
+      }
+
+      &__langs {
+        @include fluid-text(14, 15);
+        color: var(--color-primary);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  // Founder Section
+  .about-founder {
+    &__layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      background-color: var(--color-bg-dark);
+      color: var(--color-white);
+      border-radius: 20px;
+      overflow: hidden;
+
+      @include media-up(lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+    }
+
+    &__content {
+      padding: clamp(40px, 6vw, 80px);
+
+      .section-title {
+        color: var(--color-white);
+        margin-bottom: 20px;
+      }
+    }
+
+    &__desc {
+      @include fluid-text(16, 18);
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: clamp(30px, 4vw, 40px);
+      line-height: 1.5;
+    }
+
+    &__image {
+      height: 100%;
+      min-height: 400px;
+      position: relative;
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

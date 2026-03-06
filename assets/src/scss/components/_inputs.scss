@@ -1,0 +1,356 @@
+@use 'sass:color';
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Common styles for text inputs and textareas
+%input-base {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-black);
+  background-color: transparent;
+  background-clip: padding-box;
+  border: none;
+  border-bottom: 1px solid var(--color-line-gray);
+  border-radius: 0;
+  transition: border-color var(--transition-fast);
+
+  &::placeholder {
+    color: var(--text-gray-5);
+    opacity: 1;
+  }
+
+  &:focus {
+    color: var(--text-black);
+    background-color: transparent;
+    border-color: var(--color-line-active);
+    outline: 0;
+  }
+  
+  &:disabled,
+  &[readonly] {
+    background-color: var(--color-background-gray);
+    opacity: 1;
+  }
+}
+
+.input {
+  &__group {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-gray-90);
+  }
+
+  &__control {
+    @extend %input-base;
+  }
+}
+
+// Custom Checkbox & Radio
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    
+    // Checked state
+    &:checked ~ .custom-control__label::before {
+      color: var(--color-white);
+      border-color: var(--color-blue);
+      background-color: var(--color-blue);
+    }
+    
+    // Focus state
+    &:focus ~ .custom-control__label::before {
+      box-shadow: 0 0 0 0.2rem rgba(65, 84, 92, 0.25);
+    }
+    
+    // Active state
+    &:active ~ .custom-control__label::before {
+      color: var(--color-white);
+      background-color: color.adjust(#41545c, $lightness: 10%);
+      border-color: color.adjust(#41545c, $lightness: 10%);
+    }
+    
+    // Disabled state
+    &:disabled {
+      ~ .custom-control__label {
+        color: var(--text-gray-5);
+        cursor: not-allowed;
+        
+        &::before {
+          background-color: var(--color-background-gray);
+          border-color: var(--color-line-gray);
+        }
+      }
+    }
+  }
+  
+  &__label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-black);
+    
+    // Checkbox/Radio box
+    &::before {
+      position: absolute;
+      top: 0.15rem; // Adjust based on line-height
+      left: -2rem;
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      pointer-events: none;
+      content: "";
+      background-color: var(--color-white);
+      border: 1px solid var(--text-gray-5);
+      transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    
+    // Hover state on label
+    &:hover::before {
+      border-color: var(--color-line-active);
+    }
+  }
+}
+
+// Specific Checkbox
+.custom-checkbox {
+  .custom-control__label::before {
+    border-radius: var(--radius-sm);
+  }
+  
+  .custom-control__input:checked ~ .custom-control__label::after {
+    position: absolute;
+    top: 0.15rem;
+    left: -2rem;
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    content: "";
+    // SVG checkmark inline for performance
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+  }
+}
+
+// Specific Radio
+.custom-radio {
+  .custom-control__label::before {
+    border-radius: var(--radius-round);
+  }
+  
+  .custom-control__input:checked ~ .custom-control__label::after {
+    position: absolute;
+    top: 0.15rem;
+    left: -2rem;
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    content: "";
+    // SVG circle inline for performance
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+  }
+}
+
+// Custom Select
+.custom-select {
+  position: relative;
+  width: 100%;
+  
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-line-gray);
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    color: var(--text-black);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+    
+    &:hover, &:focus {
+      border-color: var(--text-gray-5);
+    }
+  }
+  
+  &__icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+    
+    &.rotate-180 {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-line-gray);
+    border-top: none;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  &__option {
+    padding: 12px 16px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    color: var(--text-black);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    
+    &:hover {
+      background-color: var(--color-background-gray);
+    }
+  }
+}
+
+// Filter Form
+.filter-form {
+  background-color: var(--color-white);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  
+  @include breakpoint-up($bp-laptop) {
+    padding: 32px;
+  }
+  
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    
+    @include breakpoint-up($bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: 1fr 1fr 1fr auto;
+      align-items: end;
+      gap: 24px;
+    }
+  }
+  
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    &--price {
+      .price-inputs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .price-separator {
+        color: var(--text-gray-5);
+      }
+    }
+  }
+  
+  &__label {
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    color: var(--text-gray-5);
+  }
+  
+  &__action {
+    @include breakpoint-up($bp-tablet) {
+      grid-column: span 2;
+    }
+    @include breakpoint-up($bp-laptop) {
+      grid-column: auto;
+    }
+  }
+  
+  &__submit {
+    width: 100%;
+    height: 48px;
+  }
+  
+  &__toggle {
+    margin-top: 16px;
+    text-align: center;
+    
+    @include breakpoint-up($bp-laptop) {
+      text-align: left;
+    }
+    
+    .filter-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      color: var(--color-blue);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      
+      svg {
+        transition: transform var(--transition-fast);
+      }
+      
+      &:hover {
+        color: var(--text-black);
+      }
+    }
+  }
+  
+  &__advanced {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-line-gray);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    
+    @include breakpoint-up($bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+}

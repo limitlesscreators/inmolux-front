@@ -1,0 +1,1139 @@
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==========================================================================
+// INVESTMENT ARCHIVE STYLES
+// ==========================================================================
+
+.archive-investment {
+  background-color: var(--color-white);
+  color: var(--text-black);
+
+  .container {
+    @include container;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 20px;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-5);
+
+      @include breakpoint-up($bp-tablet) {
+        justify-content: flex-start;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        justify-content: center;
+        font-size: 16px;
+      }
+    }
+
+    &__link {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .investment-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid var(--text-black);
+    background-color: transparent;
+    color: var(--text-black);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+
+    @include breakpoint-up($bp-tablet) {
+      width: auto;
+      min-width: 325px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      min-height: 50px;
+      padding: 0 32px;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+    }
+
+    &--filled {
+      border-color: var(--color-blue);
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+  }
+
+  .investment-heading {
+    margin: 0 auto 40px;
+    text-align: center;
+
+    @include breakpoint-up($bp-tablet) {
+      max-width: 690px;
+      margin-bottom: 50px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      max-width: 1081px;
+      margin-bottom: 60px;
+    }
+
+    &--compact {
+      @include breakpoint-up($bp-tablet) {
+        max-width: 715px;
+      }
+    }
+
+    &__eyebrow {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-tablet) {
+        font-size: 35px;
+        line-height: 1.1;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 50px;
+        line-height: 1.1;
+      }
+    }
+
+    &__subtitle {
+      margin: 12px 0 0;
+      font-size: 20px;
+      line-height: 1.3;
+
+      @include breakpoint-up($bp-laptop) {
+        margin-top: 20px;
+        font-size: 28px;
+        line-height: 1.1;
+      }
+    }
+
+    &__text {
+      margin: 20px auto 0;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+
+      @include breakpoint-up($bp-tablet) {
+        max-width: 653px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        max-width: 840px;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .investment-hero {
+    padding: 26px 0 80px;
+
+    @include breakpoint-up($bp-tablet) {
+      padding: 74px 0 110px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      padding: 92px 0 120px;
+    }
+
+    &__intro {
+      max-width: 332px;
+      margin: 0 auto 40px;
+      text-align: center;
+
+      @include breakpoint-up($bp-tablet) {
+        max-width: 690px;
+        margin-bottom: 60px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        max-width: 1063px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      @include breakpoint-up($bp-tablet) {
+        font-size: 50px;
+        line-height: 1.03;
+
+        span {
+          margin-top: 14px;
+          font-size: 35px;
+          line-height: 1.1;
+        }
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 50px;
+
+        span {
+          font-size: 28px;
+          line-height: 1.1;
+        }
+      }
+    }
+
+    &__text {
+      max-width: 330px;
+      margin: 5px auto 30px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+
+      @include breakpoint-up($bp-tablet) {
+        max-width: 526px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        margin-top: 15px;
+      }
+    }
+
+    &__gallery {
+      margin: 0 0 40px;
+      overflow: hidden;
+
+      @include breakpoint-up($bp-tablet) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__gallery-track {
+      display: flex;
+      gap: 13px;
+      width: max-content;
+
+      @include breakpoint-up($bp-tablet) {
+        gap: 24px;
+      }
+    }
+
+    &__gallery-item {
+      display: block;
+      width: 173px;
+      height: 169px;
+      background: linear-gradient(135deg, #d5d2cc 0%, #c7c2ba 100%);
+
+      @include breakpoint-up($bp-tablet) {
+        width: 304px;
+        height: 253px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        width: 217px;
+        height: 211px;
+      }
+    }
+  }
+
+  .investment-metrics {
+    border-top: 1px solid var(--color-line-gray);
+    border-bottom: 1px solid var(--color-line-gray);
+
+    @include breakpoint-up($bp-laptop) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__item {
+      padding: 45px 0 49px;
+      text-align: center;
+      border-bottom: 1px solid var(--color-line-gray);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        padding: 43px 20px 56px;
+        border-bottom: 0;
+      }
+    }
+
+    &__value {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 50px;
+      }
+    }
+
+    &__label {
+      max-width: 188px;
+      margin: 0 auto;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+    }
+  }
+
+  .investment-projects,
+  .investment-audience,
+  .investment-cycle,
+  .investment-services,
+  .investment-protection,
+  .investment-proof,
+  .investment-faq,
+  .investment-contact {
+    padding: 80px 0;
+
+    @include breakpoint-up($bp-tablet) {
+      padding: 110px 0;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      padding: 120px 0;
+    }
+  }
+
+  .investment-projects__list {
+    display: grid;
+    gap: 20px;
+
+    @include breakpoint-up($bp-tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 38px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      gap: 72px;
+    }
+  }
+
+  .investment-projects__cta {
+    margin: 20px auto 0;
+
+    @include breakpoint-up($bp-tablet) {
+      width: 689px;
+      margin-top: 40px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      width: 474px;
+    }
+  }
+
+  .investment-project-card {
+    max-width: 330px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-line-gray);
+
+    @include breakpoint-up($bp-tablet) {
+      max-width: none;
+      margin: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    &__media {
+      position: relative;
+      width: 310px;
+      margin: 0 auto 20px;
+
+      @include breakpoint-up($bp-tablet) {
+        width: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 178px;
+        object-fit: cover;
+
+        @include breakpoint-up($bp-tablet) {
+          height: 181px;
+        }
+
+        @include breakpoint-up($bp-laptop) {
+          height: 260px;
+        }
+      }
+    }
+
+    &__counter {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      color: var(--color-white);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    &__content {
+      width: 310px;
+      margin: 0 auto;
+
+      @include breakpoint-up($bp-tablet) {
+        width: 100%;
+      }
+    }
+
+    &__type {
+      margin: 0 0 8px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-gray-5);
+    }
+
+    &__title {
+      margin: 0 0 16px;
+      font-size: 20px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    &__description {
+      margin: 0 0 24px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+    }
+
+    &__meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px 18px;
+      margin: 0 0 23px;
+      padding: 0;
+      list-style: none;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text-gray-5);
+
+      @include breakpoint-up($bp-tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        width: 287px;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    &__price {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+    }
+
+    &__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--text-black);
+      border-radius: 50%;
+      color: var(--text-black);
+      text-decoration: none;
+      font-size: 0;
+
+      &::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid currentColor;
+        border-right: 1px solid currentColor;
+        transform: rotate(45deg) translate(-1px, 1px);
+      }
+
+      @include breakpoint-up($bp-tablet) {
+        width: 100%;
+        max-width: 304px;
+        min-height: 30px;
+        border-radius: 0;
+        font-size: 10px;
+        font-family: var(--font-primary);
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        max-width: 475px;
+        min-height: 50px;
+        font-size: 16px;
+      }
+    }
+
+    &__link-text {
+      @include breakpoint-down($bp-tablet) {
+        @include visually-hidden;
+      }
+    }
+  }
+
+  .investment-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    margin-bottom: 30px;
+
+    @include breakpoint-up($bp-laptop) {
+      gap: 0 20px;
+      margin-bottom: 37px;
+    }
+
+    &__item {
+      font-size: 20px;
+      line-height: 1.1;
+      color: #c4c4c4;
+
+      &::before,
+      &::after {
+        content: '/';
+        margin: 0 10px;
+        color: #c4c4c4;
+      }
+
+      &--active {
+        color: var(--text-black);
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          margin-right: 12px;
+          border-radius: 50%;
+          background-color: var(--text-black);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .investment-case {
+    display: grid;
+    gap: 20px;
+    border-top: 1px solid var(--color-line-gray);
+    border-bottom: 1px solid var(--color-line-gray);
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: 329px minmax(0, 1fr);
+      align-items: stretch;
+    }
+
+    &__copy {
+      display: grid;
+      gap: 0;
+    }
+
+    &__block {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--color-line-gray);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    &__label {
+      margin: 0 0 16px;
+      font-family: var(--font-secondary);
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    &__text {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 16px;
+      }
+    }
+
+    &__media img {
+      display: block;
+      width: 100%;
+      min-height: 260px;
+      object-fit: cover;
+
+      @include breakpoint-up($bp-laptop) {
+        height: 372px;
+      }
+    }
+  }
+
+  .investment-cycle__intro {
+    max-width: 271px;
+    margin: 0 auto 30px;
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--text-gray-90);
+
+    @include breakpoint-up($bp-tablet) {
+      max-width: 653px;
+      margin-bottom: 50px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      max-width: 772px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .investment-cycle__image {
+    margin-bottom: 30px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 275px;
+      object-fit: cover;
+
+      @include breakpoint-up($bp-laptop) {
+        height: 406px;
+      }
+    }
+  }
+
+  .investment-cycle__grid {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--color-line-gray);
+    border-bottom: 1px solid var(--color-line-gray);
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 34px;
+    }
+  }
+
+  .investment-cycle-card {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--color-line-gray);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &--active {
+      @include breakpoint-up($bp-laptop) {
+        grid-row: span 6;
+      }
+    }
+
+    &--compact {
+      font-size: 20px;
+      line-height: 1.1;
+      color: #c4c4c4;
+    }
+
+    &__title {
+      margin: 0 0 20px;
+      font-size: 20px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+    }
+
+    &__text,
+    &__list li {
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 16px;
+      }
+    }
+
+    &__text {
+      margin: 0 0 20px;
+    }
+
+    &__benefits-title {
+      margin-bottom: 12px;
+      font-family: var(--font-secondary);
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 12px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--text-black);
+        }
+      }
+    }
+  }
+
+  .investment-cycle__cta {
+    margin: 30px auto 0;
+
+    @include breakpoint-up($bp-tablet) {
+      width: 330px;
+    }
+  }
+
+  .investment-services__grid {
+    display: grid;
+    gap: 20px;
+
+    @include breakpoint-up($bp-tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 22px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+
+  .investment-service-card {
+    &__title {
+      margin: 0 0 20px;
+      font-size: 20px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: 238px;
+      background: linear-gradient(135deg, #d4d0c8 0%, #c0b9b0 100%);
+
+      &--small {
+        height: 132px;
+      }
+
+      &--dark {
+        background: linear-gradient(135deg, #8d8f95 0%, #6e7077 100%);
+      }
+
+      &--accent {
+        background: linear-gradient(135deg, #b9aca0 0%, #94897f 100%);
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        height: 416px;
+
+        &--small {
+          height: 132px;
+        }
+      }
+    }
+
+    &__list {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 12px;
+        font-family: var(--font-secondary);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.3;
+        color: var(--text-gray-90);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--text-black);
+        }
+      }
+    }
+  }
+
+  .investment-services__footer {
+    max-width: 330px;
+    margin: 50px auto 0;
+    text-align: center;
+
+    @include breakpoint-up($bp-tablet) {
+      max-width: 691px;
+    }
+
+    &-title {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    &-text {
+      margin: 0 0 25px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+    }
+  }
+
+  .investment-protection__grid {
+    display: grid;
+    gap: 30px;
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px 59px;
+    }
+  }
+
+  .investment-risk-card {
+    padding-top: 30px;
+    border-top: 1px solid var(--color-line-gray);
+
+    &__title {
+      margin: 0 0 20px;
+      font-size: 20px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-bottom: 14px;
+        padding-left: 12px;
+        font-family: var(--font-secondary);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.3;
+        color: var(--text-gray-90);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--text-black);
+        }
+      }
+    }
+
+    &--emphasis {
+      @include breakpoint-up($bp-laptop) {
+        padding-top: 0;
+        border-top: 0;
+      }
+    }
+  }
+
+  .investment-proof__media {
+    width: 100%;
+    height: 168px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #d8d4ce 0%, #beb6ab 100%);
+
+    @include breakpoint-up($bp-tablet) {
+      height: 260px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      height: 520px;
+    }
+  }
+
+  .investment-proof__stats,
+  .investment-proof__awards {
+    display: grid;
+    gap: 20px;
+    border-top: 1px solid var(--color-line-gray);
+    padding-top: 30px;
+
+    @include breakpoint-up($bp-tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    article h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.1;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 50px;
+      }
+    }
+
+    article p {
+      margin: 0;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .investment-proof__awards {
+    margin-top: 30px;
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    article h3 {
+      font-size: 20px;
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .investment-faq__list {
+    border-top: 1px solid var(--color-line-gray);
+  }
+
+  .investment-faq__item {
+    position: relative;
+    padding: 20px 40px 20px 0;
+    border-bottom: 1px solid var(--color-line-gray);
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
+
+    &::after {
+      content: '+';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--text-black);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      padding: 40px 60px 40px 0;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+  }
+
+  .investment-faq__cta {
+    max-width: 330px;
+    margin: 40px auto 0;
+    text-align: center;
+
+    @include breakpoint-up($bp-tablet) {
+      max-width: 689px;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      max-width: 1080px;
+    }
+
+    p {
+      max-width: 627px;
+      margin: 0 auto 20px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-90);
+
+      @include breakpoint-up($bp-laptop) {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .investment-contact {
+    background: linear-gradient(135deg, #d6d2cb 0%, #b7afa3 100%);
+
+    &__panel {
+      max-width: 310px;
+      margin: 0 auto;
+      padding: 40px 0;
+      background-color: rgba(250, 250, 250, 0.92);
+
+      @include breakpoint-up($bp-tablet) {
+        max-width: 586px;
+        padding: 59px 29px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        max-width: 310px;
+        padding: 59px 19px;
+      }
+    }
+
+    &__form {
+      display: grid;
+      gap: 0;
+
+      select {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 15px;
+        border: 1px solid var(--color-line-gray);
+        border-bottom: 0;
+        background: var(--color-white);
+        font-family: var(--font-secondary);
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--text-gray-90);
+
+        &:last-of-type {
+          border-bottom: 1px solid var(--color-line-gray);
+        }
+      }
+    }
+
+    &__note {
+      margin: 30px 0 15px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    &__privacy {
+      max-width: 270px;
+      margin: 15px auto 0;
+      font-family: var(--font-secondary);
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 1.3;
+      text-align: center;
+      color: var(--text-gray-5);
+    }
+  }
+}

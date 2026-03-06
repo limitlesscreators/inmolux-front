@@ -1,0 +1,138 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+// Media queries
+@mixin breakpoint-up($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($breakpoint) {
+  @media screen and (max-width: ($breakpoint - 1)) {
+    @content;
+  }
+}
+
+// Container mixin
+@mixin container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  // 360px
+  padding-left: 15px;
+  padding-right: 15px;
+  
+  @include breakpoint-up($bp-tablet) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @include breakpoint-up($bp-laptop) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  @include breakpoint-up($bp-desktop) {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+}
+
+// Typography mixin
+@mixin font-face($name, $path, $weight: null, $style: null) {
+  $exts: eot woff2 woff ttf svg;
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: $ext;
+    @if map-has-key($extmods, $ext) {
+      $extmod: $ext + map-get($extmods, $ext);
+    }
+    
+    $format: $ext;
+    @if map-has-key($formats, $ext) {
+      $format: map-get($formats, $ext);
+    }
+    
+    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap; // Crucial for PageSpeed
+    src: $src;
+  }
+}
+
+// Visually hidden (accessibility)
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Text truncation
+@mixin text-truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Fluid typography
+@mixin fluid-text($min-size, $max-size, $min-vw: 360, $max-vw: 1920) {
+  font-size: clamp(
+    #{$min-size}px,
+    calc(#{$min-size}px + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))),
+    #{$max-size}px
+  );
+}
+
+// Media up (Bootstrap style)
+@mixin media-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: 576px) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: 992px) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: 1200px) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: 1400px) { @content; }
+  } @else {
+    @media (min-width: $breakpoint) { @content; }
+  }
+}

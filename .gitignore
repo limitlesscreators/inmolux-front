@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+agent/
+figma/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Cache and temp
+.cache/
+.tmp/
+temp/
+*.tmp
+
+# Vite / tooling caches
+.vite/
+vite.config.timestamp-*.mjs
+
+# Optional: lockfiles (uncomment the one(s) you use to commit)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb
+
+# Coverage / tests
+coverage/
+*.lcov
+
+# Sass / CSS artifacts (if any generated)
+*.css.map
+*.sass-cache/

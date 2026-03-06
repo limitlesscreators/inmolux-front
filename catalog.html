@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>InMolux - Каталог</title>
+ 	<script type="module" src="http://localhost:3000/@vite/client"></script>
+ 	<script type="module" src="http://localhost:3000/assets/src/js/main.js"></script>
+ </head>
+ <body class="catalog-screen" x-data="{ mobileMenuOpen: false }" :class="mobileMenuOpen ? 'overflow-hidden' : ''">
+	<header class="site-header site-header--scrolled catalog-header">
+		<div class="header-desktop show-from-laptop">
+			<div class="header-desktop__row header-desktop__row--main">
+				<div class="header-desktop__left">
+					<nav class="main-navigation" aria-label="Основная навигация">
+						<ul class="main-menu">
+							<li><a href="./sell.html">продать</a></li>
+							<li><a href="./buy.html">купить</a></li>
+							<li><a href="./investment.html">Инвестировать</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header-desktop__center">
+					<a class="header-desktop__logo" href="./index.html" aria-label="InMolux">
+						<img class="header-desktop__logo-img header-desktop__logo-img--default" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+						<img class="header-desktop__logo-img header-desktop__logo-img--scrolled" src="https://dummyimage.com/300x50/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
+					</a>
+				</div>
+				<div class="header-desktop__right">
+					<a class="header-desktop__phone" href="tel:+34609868314">+34 609 868 314</a>
+					<div class="header-desktop__lang">
+						<div class="lang-switcher">
+							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+						</div>
+					</div>
+					<a class="header-desktop__cta" href="./contacts.html">Consultation</a>
+				</div>
+			</div>
+			<div class="header-desktop__separator"></div>
+			<div class="header-desktop__row header-desktop__row--sub">
+				<div class="header-desktop__subnav">
+					<ul class="sub-menu-list">
+						<li><a href="./development.html">Проекты</a></li>
+						<li><a href="./catalog.html">Каталог</a></li>
+						<li><a href="./about.html">О нас</a></li>
+						<li><a href="./contacts.html">Контакты</a></li>
+					</ul>
+				</div>
+				<button class="header-desktop__menu-toggle" type="button" @click="mobileMenuOpen = !mobileMenuOpen">
+					<span class="header-desktop__menu-label">меню</span>
+					<span class="header-desktop__hamburger"><span></span><span></span></span>
+				</button>
+			</div>
+		</div>
+		<div class="header-mobile hide-from-laptop">
+			<div class="header-mobile__row">
+				<div class="header-mobile__left">
+					<button class="header-mobile__burger" type="button" aria-label="Открыть меню" @click="mobileMenuOpen = !mobileMenuOpen">
+						<span class="header-mobile__burger-lines">
+							<svg viewBox="0 0 25 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H25" stroke="currentColor"/><path d="M0 9H25" stroke="currentColor"/></svg>
+						</span>
+					</button>
+					<div class="header-mobile__lang">
+						<div class="lang-switcher">
+							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="header-mobile__center">
+					<a class="header-mobile__logo" href="./index.html" aria-label="InMolux">
+						<img class="header-mobile__logo-img header-mobile__logo-img--default" src="https://dummyimage.com/200x40/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+						<img class="header-mobile__logo-img header-mobile__logo-img--scrolled" src="https://dummyimage.com/200x40/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
+					</a>
+				</div>
+				<div class="header-mobile__right">
+					<a class="header-mobile__cta" href="./contacts.html">Consultation</a>
+				</div>
+			</div>
+			<div class="header-mobile__separator"></div>
+		</div>
+	</header>
+	<main class="catalog-page">
+		<section class="catalog-hero">
+			<div class="container">
+				<nav class="breadcrumbs catalog-hero__breadcrumbs" aria-label="Хлебные крошки">
+					<ol class="breadcrumbs__list">
+						<li><a class="breadcrumbs__link" href="./index.html">Главная</a></li>
+						<li><span class="breadcrumbs__separator">/</span></li>
+						<li class="breadcrumbs__item--current">Каталог</li>
+					</ol>
+				</nav>
+				<div class="catalog-hero__intro">
+					<h1 class="catalog-hero__title">Элитная недвижимость Марбельи и Costa del Sol - от 500 000 €</h1>
+					<a class="catalog-hero__cta" href="./contacts.html">Начните подбор недвижимости по ключевым параметрам</a>
+				</div>
+			</div>
+			<div class="catalog-hero__media">
+				<img class="catalog-hero__image" src="https://dummyimage.com/1920x635/d8d1c7/d8d1c7.png&text=Catalog+Hero" alt="Элитная недвижимость Марбельи и Costa del Sol">
+			</div>
+		</section>
+		<section class="catalog-results" aria-labelledby="catalog-results-title">
+			<div class="container">
+				<header class="catalog-results__header">
+					<h2 class="catalog-results__title" id="catalog-results-title">Актуальные объекты с понятным статусом сделки</h2>
+				</header>
+				<form class="catalog-toolbar" aria-label="Фильтры каталога">
+					<button class="catalog-toolbar__item" type="button">Тип недвижимости</button>
+					<button class="catalog-toolbar__item" type="button">Бюджет</button>
+					<button class="catalog-toolbar__item" type="button">Локация</button>
+					<button class="catalog-toolbar__item" type="button">Спальни</button>
+					<button class="catalog-toolbar__submit" type="button">Поиск</button>
+				</form>
+				<div class="catalog-list">
+					<article class="catalog-card catalog-card--media-right">
+						<div class="catalog-card__details">
+							<p class="catalog-card__eyebrow">Вилла</p>
+							<h3 class="catalog-card__title"><a href="./single.html">Malaga Nueva Andalucia,</a></h3>
+							<ul class="catalog-card__meta">
+								<li>Спальни / 6</li>
+								<li>Терраса / 356 m²</li>
+								<li>Ванные / 7</li>
+								<li>Участок / 2090 m²</li>
+								<li>Площадь / 1071 m²</li>
+								<li>Площадь / 1026 m²</li>
+							</ul>
+							<div class="catalog-card__price-row">
+								<p class="catalog-card__price">€ 8,800,000</p>
+								<a class="catalog-card__link" href="./single.html" aria-label="Подробнее о Malaga Nueva Andalucia"><span class="catalog-card__link-text">Подробнее</span></a>
+							</div>
+						</div>
+						<div class="catalog-card__media">
+							<div class="property-card-slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d6d2cc/d6d2cc.png&text=Villa+Exterior" alt="Villa Nueva Andalucía"></div>
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/cfd5d8/cfd5d8.png&text=Villa+Interior" alt="Интерьер Villa Nueva Andalucía"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+							<div class="swiper-counter">01/02</div>
+						</div>
+					</article>
+					<article class="catalog-card catalog-card--media-left">
+						<div class="catalog-card__details">
+							<p class="catalog-card__eyebrow">Вилла</p>
+							<h3 class="catalog-card__title"><a href="./single.html">Malaga San Pedro de Alcantara, Guadalmina Alta</a></h3>
+							<ul class="catalog-card__meta">
+								<li>Спальни / 6</li>
+								<li>Терраса / 356 m²</li>
+								<li>Ванные / 7</li>
+								<li>Участок / 2090 m²</li>
+								<li>Площадь / 1071 m²</li>
+								<li>Площадь / 1026 m²</li>
+							</ul>
+							<div class="catalog-card__price-row">
+								<p class="catalog-card__price">€ 6,400,000</p>
+								<a class="catalog-card__link" href="./single.html" aria-label="Подробнее о Malaga San Pedro de Alcantara"><span class="catalog-card__link-text">Подробнее</span></a>
+							</div>
+						</div>
+						<div class="catalog-card__media">
+							<div class="property-card-slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d8d3cc/d8d3cc.png&text=Golden+Mile" alt="Apartamento Golden Mile"></div>
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d7d2cb/d7d2cb.png&text=Sea+View" alt="Вид на море Golden Mile"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+							<div class="swiper-counter">01/02</div>
+						</div>
+					</article>
+					<article class="catalog-card catalog-card--media-right">
+						<div class="catalog-card__details">
+							<p class="catalog-card__eyebrow">Villa / San Pedro de Alcántara</p>
+							<h3 class="catalog-card__title"><a href="./single.html">Villa San Pedro de Alcántara</a></h3>
+							<ul class="catalog-card__meta">
+								<li>REF. / 3902</li>
+								<li>Спальни / 6</li>
+								<li>Ванные / 7</li>
+								<li>Площадь / 1071 m²</li>
+								<li>Терраса / 356 m²</li>
+								<li>Участок / 2090 m²</li>
+							</ul>
+							<div class="catalog-card__price-row">
+								<p class="catalog-card__price">€ 6,400,000</p>
+								<a class="catalog-card__link" href="./single.html" aria-label="Подробнее о Villa San Pedro de Alcántara"><span class="catalog-card__link-text">Подробнее</span></a>
+							</div>
+						</div>
+						<div class="catalog-card__media">
+							<div class="property-card-slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/cabfb3/cabfb3.png&text=San+Pedro" alt="Villa San Pedro de Alcántara"></div>
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d4d2cf/d4d2cf.png&text=Terrace" alt="Терраса Villa San Pedro de Alcántara"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+							<div class="swiper-counter">01/02</div>
+						</div>
+					</article>
+				</div>
+				<a class="catalog-results__more" href="./contacts.html">Смотреть больше проектов</a>
+			</div>
+		</section>
+		<section class="catalog-cta" aria-labelledby="catalog-cta-title">
+			<div class="catalog-cta__bg">
+				<img class="catalog-cta__bg-image" src="https://dummyimage.com/1920x1342/cbbeb0/cbbeb0.png&text=Off-Market+Background" alt="Off-market предложения">
+			</div>
+			<div class="container">
+				<div class="catalog-cta__panel">
+					<h2 class="catalog-cta__title" id="catalog-cta-title">Не нашли подходящий объект в каталоге?</h2>
+					<p class="catalog-cta__text">Оставьте запрос - мы подберём off-market предложения и редкие объекты</p>
+					<a class="catalog-cta__button" href="./contacts.html">Оставить запрос на персональный подбор</a>
+					<p class="catalog-cta__note">Без обязательств / Конфиденциально / Под ваш запрос</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__top">
+				<div class="site-footer__col site-footer__col--brand">
+					<a class="site-footer__logo" href="./index.html" aria-label="InMolux">
+						<img class="site-footer__logo-img" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+					</a>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Недвижимость Марбельи</span>
+						<span class="site-footer__value">Инвестиции, покупка, девелопмент</span>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Социальные сети</span>
+						<div class="site-footer__socials">
+							<a class="site-footer__social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
+							<a class="site-footer__social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M13 21V13H16L16.5 9H13V7C13 5.9 13.3 5 14.9 5H16.6V1.4C16.3 1.3 15.2 1 13.8 1C10.8 1 8.8 2.8 8.8 6.2V9H5.5V13H8.8V21H13Z" fill="currentColor"/></svg></a>
+							<a class="site-footer__social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9H10V21H6V9ZM8 3C9.1 3 10 3.9 10 5C10 6.1 9.1 7 8 7C6.9 7 6 6.1 6 5C6 3.9 6.9 3 8 3ZM12 9H15.8V10.7H15.9C16.4 9.7 17.7 8.7 19.6 8.7C23.4 8.7 24 11.1 24 14.3V21H20V15.1C20 13.7 20 11.9 18.1 11.9C16.2 11.9 15.9 13.4 15.9 15V21H12V9Z" fill="currentColor"/></svg></a>
+						</div>
+					</div>
+				</div>
+				<div class="site-footer__col site-footer__col--contacts">
+					<div class="site-footer__block">
+						<span class="site-footer__label">Телефон</span>
+						<a class="site-footer__value site-footer__value--link" href="tel:+34609868314">+34 609 868 314</a>
+						<a class="site-footer__value site-footer__value--link" href="tel:+34952770782">+34 952 770 782</a>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Электронная почта</span>
+						<a class="site-footer__value site-footer__value--link" href="mailto:info@inmoluxgroup.com">info@inmoluxgroup.com</a>
+					</div>
+				</div>
+				<div class="site-footer__col site-footer__col--address">
+					<div class="site-footer__block">
+						<span class="site-footer__label">Адрес</span>
+						<address class="site-footer__value">Авеню Рикардо Сориано, 55.<br>29602 Марбелья, Малага.</address>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">График работы</span>
+						<span class="site-footer__value">пн-вс 08:00 – 22:00</span>
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__nav-row">
+				<ul class="site-footer__menu">
+					<li><a href="./buy.html">Покупателям</a></li>
+					<li><a href="./sell.html">Продавцам</a></li>
+					<li><a href="./investment.html">Инвестиции</a></li>
+					<li><a href="./development.html">Проекты</a></li>
+					<li><a href="./about.html">О нас</a></li>
+					<li><a href="./contacts.html">Контакты</a></li>
+				</ul>
+				<div class="site-footer__lang">
+					<div class="lang-switcher">
+						<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__map-row">
+				<div class="site-footer__map-left">
+					<button class="site-footer__directions" type="button">Как к нам добраться</button>
+					<a class="site-footer__cta-btn" href="./contacts.html">Задать вопросы</a>
+				</div>
+				<div class="site-footer__map-right">
+					<div class="site-footer__map-embed">
+						<img src="https://dummyimage.com/1200x534/e8e8e8/e8e8e8.png&text=Office+Map" alt="Office map">
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__payments-row">
+				<div class="site-footer__payments">
+					<span class="site-footer__pay-icon">VISA</span>
+					<span class="site-footer__pay-icon">MC</span>
+					<span class="site-footer__pay-icon">SWIFT</span>
+					<span class="site-footer__pay-icon">USDT</span>
+					<span class="site-footer__pay-icon">BTC</span>
+				</div>
+			</div>
+			<div class="site-footer__legal-row">
+				<div class="site-footer__copyright">© 2019–2025 InmoLux</div>
+				<div class="site-footer__legal-links">
+					<a href="./policy.html">Политика конфиденциальности</a>
+					<a href="./policy.html">Политика использования файлов cookie</a>
+				</div>
+				<div class="site-footer__credits">Сайт разработан</div>
+			</div>
+		</div>
+	</footer>
+ </body>
+ </html>

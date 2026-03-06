@@ -1,0 +1,131 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==========================================================================
+// CONTACTS PAGE STYLES
+// ==========================================================================
+
+.page-contacts {
+  padding-top: var(--header-height-desktop);
+  padding-bottom: clamp(60px, 8vw, 120px);
+
+  .breadcrumbs {
+    margin-top: clamp(20px, 4vw, 40px);
+    margin-bottom: clamp(30px, 5vw, 60px);
+  }
+
+  .page-header {
+    margin-bottom: clamp(40px, 6vw, 80px);
+  }
+
+  .page-title {
+    @include fluid-text(40, 80);
+    font-family: var(--font-accent);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .contacts-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include media-up(lg) {
+      grid-template-columns: 4fr 8fr;
+      gap: clamp(60px, 8vw, 120px);
+    }
+  }
+
+  .contacts-info {
+    &__group {
+      margin-bottom: clamp(30px, 4vw, 40px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__label {
+      @include fluid-text(14, 16);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-light);
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    &__val {
+      @include fluid-text(18, 24);
+      color: var(--color-text);
+      display: block;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &--large {
+        @include fluid-text(24, 32);
+        font-family: var(--font-accent);
+      }
+
+      a &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    &__socials {
+      margin-top: clamp(40px, 6vw, 60px);
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        width: 48px;
+        height: 48px;
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: var(--color-primary);
+          border-color: var(--color-primary);
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
+  .contacts-map {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--color-bg-light);
+
+    @include media-up(lg) {
+      height: 100%;
+      min-height: 600px;
+    }
+
+    &__placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-light);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+}

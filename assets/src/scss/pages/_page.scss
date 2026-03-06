@@ -1,0 +1,148 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// General Page Styles
+.page-article {
+  padding-top: 120px;
+  padding-bottom: 96px;
+  
+  @include breakpoint-down($bp-tablet) {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+}
+
+.page-header {
+  margin-bottom: 48px;
+  
+  @include breakpoint-down($bp-tablet) {
+    margin-bottom: 32px;
+  }
+}
+
+.page-title {
+  margin-bottom: 24px;
+}
+
+.page-content {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-black);
+  max-width: 800px;
+  margin: 0 auto;
+  
+  @include breakpoint-down($bp-tablet) {
+    font-size: 14px;
+  }
+  
+  p {
+    margin-bottom: 24px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  h2 {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+  
+  h3 {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  
+  ul, ol {
+    margin-bottom: 24px;
+    padding-left: 24px;
+  }
+  
+  ul {
+    list-style-type: disc;
+  }
+  
+  ol {
+    list-style-type: decimal;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  a {
+    color: var(--color-blue);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+    
+    &:hover {
+      color: var(--text-black);
+    }
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--color-blue);
+    padding-left: 24px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24px;
+    font-style: italic;
+    color: var(--text-gray-5);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+  }
+}
+
+// 404 Page Styles
+.error-404 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @include breakpoint-down($bp-tablet) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .page-header {
+    margin-bottom: 24px;
+  }
+  
+  .page-title {
+    font-size: 64px;
+    margin-bottom: 16px;
+    
+    @include breakpoint-down($bp-tablet) {
+      font-size: 48px;
+    }
+  }
+  
+  .page-content {
+    p {
+      font-size: 20px;
+      color: var(--text-gray-5);
+      margin-bottom: 40px;
+    }
+  }
+  
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+}

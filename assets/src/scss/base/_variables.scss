@@ -1,0 +1,42 @@
+:root {
+  // Цвета (из Figma)
+  --color-blue: #41545c;
+  --color-white: #ffffff;
+  --color-background-gray: #fafafa;
+  --color-line-gray: #e1e1e1;
+  --color-line-active: #a5a5a5;
+  
+  // Текст
+  --text-black: #010101;
+  --text-gray-90: #3c3c3b;
+  --text-gray-10: #3c3c3b; // Используется в 1920
+  --text-gray-5: #a6a6a6;
+  
+  // Специфичные для мобильных и планшетов
+  --color-mob-line: #e1e1e1;
+  --color-mob-background: #fafafa;
+  
+  // Шрифты
+  --font-primary: 'Felidae', serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-accent: 'Manrope', sans-serif;
+  --font-display: 'Vela Sans', sans-serif;
+  --font-ui: 'Bellota Text', sans-serif;
+
+  // Отступы и скругления
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-round: 50%;
+  
+  // Анимации
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+// Breakpoints
+$bp-mobile: 360px;
+$bp-tablet: 768px;
+$bp-laptop: 1200px;
+$bp-desktop: 1920px;

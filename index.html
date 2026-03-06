@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>InMolux - Главная</title>
+	<!-- Подключение стилей и скриптов через Vite -->
+	<script type="module" src="http://localhost:3000/@vite/client"></script>
+	<script type="module" src="http://localhost:3000/assets/src/js/main.js"></script>
+</head>
+
+<body class="home" x-data="{ mobileMenuOpen: false, scrolledHeader: false }" :class="mobileMenuOpen ? 'overflow-hidden' : ''">
+	<header class="site-header site-header--light" :class="{ 'site-header--scrolled': scrolledHeader }">
+		<div class="header-desktop show-from-laptop">
+			<div class="header-desktop__row header-desktop__row--main">
+				<div class="header-desktop__left">
+					<nav class="main-navigation" aria-label="Основная навигация">
+						<ul class="main-menu">
+							<li><a href="#tasks-title">продать</a></li>
+							<li><a href="#tasks-title">купить</a></li>
+							<li><a href="#tasks-title">Инвестировать</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header-desktop__center">
+					<a class="header-desktop__logo" href="#" aria-label="InMolux">
+						<img class="header-desktop__logo-img header-desktop__logo-img--default" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+						<img class="header-desktop__logo-img header-desktop__logo-img--scrolled" src="https://dummyimage.com/300x50/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
+					</a>
+				</div>
+				<div class="header-desktop__right">
+					<a class="header-desktop__phone" href="tel:+34609868314">+34 609 868 314</a>
+					<div class="header-desktop__lang">
+						<div class="lang-switcher">
+							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+						</div>
+					</div>
+					<a class="header-desktop__cta" href="#inquiry2">Consultation</a>
+				</div>
+			</div>
+			<div class="header-desktop__separator"></div>
+			<div class="header-desktop__row header-desktop__row--sub">
+				<div class="header-desktop__subnav">
+					<ul class="sub-menu-list">
+						<li><a href="#solutions-title">Проекты</a></li>
+						<li><a href="#locations-title">Каталог</a></li>
+						<li><a href="#numbers-title">О нас</a></li>
+						<li><a href="#inquiry2">Контакты</a></li>
+					</ul>
+				</div>
+				<button class="header-desktop__menu-toggle" type="button" @click="mobileMenuOpen = !mobileMenuOpen">
+					<span class="header-desktop__menu-label">меню</span>
+					<span class="header-desktop__hamburger"><span></span><span></span></span>
+				</button>
+			</div>
+		</div>
+		<div class="header-mobile hide-from-laptop">
+			<div class="header-mobile__row">
+				<div class="header-mobile__left">
+					<button class="header-mobile__burger" type="button" aria-label="Открыть меню" @click="mobileMenuOpen = !mobileMenuOpen">
+						<span class="header-mobile__burger-lines">
+							<svg viewBox="0 0 25 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H25" stroke="currentColor"/><path d="M0 9H25" stroke="currentColor"/></svg>
+						</span>
+					</button>
+					<div class="header-mobile__lang">
+						<div class="lang-switcher">
+							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="header-mobile__center">
+					<a class="header-mobile__logo" href="#" aria-label="InMolux">
+						<img class="header-mobile__logo-img header-mobile__logo-img--default" src="https://dummyimage.com/200x40/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+						<img class="header-mobile__logo-img header-mobile__logo-img--scrolled" src="https://dummyimage.com/200x40/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
+					</a>
+				</div>
+				<div class="header-mobile__right">
+					<a class="header-mobile__cta" href="#inquiry2">Consultation</a>
+				</div>
+			</div>
+			<div class="header-mobile__separator"></div>
+		</div>
+	</header>
+	<section class="hero" aria-labelledby="hero-title">
+		<div class="hero__bg">
+			<img class="hero__bg-img" src="https://dummyimage.com/1920x1080/41545c/41545c.png&text=Marbella+Hero" alt="Недвижимость Марбельи">
+		</div>
+		<div class="hero__overlay"></div>
+		<div class="hero__inner" :class="{ 'hero__inner--scrolled': scrolledHeader }">
+			<div class="hero__content" :class="{ 'hero__content--scrolled': scrolledHeader }">
+				<div x-show="!scrolledHeader">
+					<h1 class="hero__title" id="hero-title">Недвижимость и девелопмент<br> в престижных районах Марбельи</h1>
+					<p class="hero__subtitle">от проверки объекта до постпродажного сервиса</p>
+					<p class="hero__stats-line">15 лет работы в Испании / 5 000+ закрытых сделок / 200+ млн € под управлением / LPA и международные премии</p>
+				</div>
+				<div x-show="scrolledHeader">
+					<p class="hero__scrolled-top">Keep scrolling</p>
+					<div class="hero__scrolled-menu">
+						<a class="hero__scrolled-link" href="#tasks-title"><span class="hero__scrolled-dot"></span>Инвестор</a>
+						<span class="hero__scrolled-sep">/</span>
+						<a class="hero__scrolled-link" href="#tasks-title">Покупатель</a>
+						<span class="hero__scrolled-sep">/</span>
+						<a class="hero__scrolled-link" href="#tasks-title">Собственник</a>
+					</div>
+					<div class="hero__scrolled-btn-wrap">
+						<a class="hero__scrolled-btn" href="#inquiry2">Consultation</a>
+						<p class="hero__scrolled-subtext">Подберём решение под бюджет, цель и сценарий сделки</p>
+					</div>
+				</div>
+			</div>
+			<div class="hero__scroll" x-show="!scrolledHeader">
+				<span class="hero__scroll-text">Keep scrolling</span>
+				<span class="hero__scroll-arrow">↓</span>
+			</div>
+		</div>
+	</section>
+	<main class="page-main">
+		<section class="awards" aria-label="Награды и признание">
+			<div class="awards__inner">
+				<article class="awards__card">
+					<div class="awards__logo awards__logo--forbes" aria-hidden="true"></div>
+					<button class="awards__expand" type="button" aria-label="Открыть награду">
+						<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor"></circle><line x1="10" y1="5" x2="10" y2="15" stroke="currentColor"></line><line x1="5" y1="10" x2="15" y2="10" stroke="currentColor"></line></svg>
+					</button>
+				</article>
+				<article class="awards__card">
+					<div class="awards__logo awards__logo--eea" aria-hidden="true"></div>
+					<button class="awards__expand" type="button" aria-label="Открыть награду">
+						<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor"></circle><line x1="10" y1="5" x2="10" y2="15" stroke="currentColor"></line><line x1="5" y1="10" x2="15" y2="10" stroke="currentColor"></line></svg>
+					</button>
+				</article>
+				<article class="awards__card">
+					<div class="awards__logo awards__logo--ihc" aria-hidden="true"></div>
+					<button class="awards__expand" type="button" aria-label="Открыть награду">
+						<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor"></circle><line x1="10" y1="5" x2="10" y2="15" stroke="currentColor"></line><line x1="5" y1="10" x2="15" y2="10" stroke="currentColor"></line></svg>
+					</button>
+				</article>
+			</div>
+		</section>
+
+		<section class="tasks" x-data="{ activeTask: 2 }" aria-labelledby="tasks-title">
+			<div class="tasks__header">
+				<h2 class="tasks__title" id="tasks-title">Недвижимость Марбельи, выстроенная под вашу задачу</h2>
+				<p class="tasks__subtitle">покупка, инвестиции или девелопмент</p>
+			</div>
+			<div class="tasks__grid">
+				<article class="tasks__card" :class="{ 'tasks__card--expanded': activeTask === 0 }" @click="activeTask = activeTask === 0 ? -1 : 0">
+					<div class="tasks__card-header">
+						<h3 class="tasks__card-title" :class="{ 'tasks__card-title--active': activeTask === 0 }">Инвестор</h3>
+						<button class="tasks__card-toggle" :class="{ 'tasks__card-toggle--active': activeTask === 0 }" type="button" aria-label="Раскрыть карточку инвестора" @click.stop="activeTask = activeTask === 0 ? -1 : 0">
+							<svg viewBox="0 0 37 37" aria-hidden="true"><circle cx="18.5" cy="18.5" r="18"></circle><line x1="18.5" y1="10" x2="18.5" y2="27"></line><line x1="10" y1="18.5" x2="27" y2="18.5"></line></svg>
+						</button>
+					</div>
+					<div class="tasks__card-body">
+						<div class="tasks__card-text-top">
+							<p class="tasks__card-short">Структурируем инвестицию под доходность, сроки и сценарий выхода.</p>
+							<p class="tasks__card-desc">Помогаем выбрать ликвидный объект, проверить риски, просчитать модель входа и сопровождать сделку до управления активом.</p>
+						</div>
+						<div class="tasks__card-image"><img src="https://dummyimage.com/720x960/cfd5d8/cfd5d8.png&text=Investor" alt="Инвестиционная недвижимость"></div>
+						<div class="tasks__card-btn-wrap">
+							<a class="tasks__card-btn btn btn--filled" href="#inquiry2">Обсудить задачу</a>
+						</div>
+					</div>
+				</article>
+				<article class="tasks__card" :class="{ 'tasks__card--expanded': activeTask === 1 }" @click="activeTask = activeTask === 1 ? -1 : 1">
+					<div class="tasks__card-header">
+						<h3 class="tasks__card-title" :class="{ 'tasks__card-title--active': activeTask === 1 }">Покупатель</h3>
+						<button class="tasks__card-toggle" :class="{ 'tasks__card-toggle--active': activeTask === 1 }" type="button" aria-label="Раскрыть карточку покупателя" @click.stop="activeTask = activeTask === 1 ? -1 : 1">
+							<svg viewBox="0 0 37 37" aria-hidden="true"><circle cx="18.5" cy="18.5" r="18"></circle><line x1="18.5" y1="10" x2="18.5" y2="27"></line><line x1="10" y1="18.5" x2="27" y2="18.5"></line></svg>
+						</button>
+					</div>
+					<div class="tasks__card-body">
+						<div class="tasks__card-text-top">
+							<p class="tasks__card-short">Подбираем объект под стиль жизни, бюджет и семейные цели.</p>
+							<p class="tasks__card-desc">Берём на себя поиск, переговоры, юридическую проверку, сопровождение ипотеки и организацию покупки без лишних посредников.</p>
+						</div>
+						<div class="tasks__card-image"><img src="https://dummyimage.com/720x960/d7d2cb/d7d2cb.png&text=Buyer" alt="Недвижимость для покупки"></div>
+						<div class="tasks__card-btn-wrap">
+							<a class="tasks__card-btn btn btn--filled" href="#inquiry2">Получить подборку</a>
+						</div>
+					</div>
+				</article>
+				<article class="tasks__card" :class="{ 'tasks__card--expanded': activeTask === 2 }" @click="activeTask = activeTask === 2 ? -1 : 2">
+					<div class="tasks__card-header">
+						<h3 class="tasks__card-title" :class="{ 'tasks__card-title--active': activeTask === 2 }">Собственник</h3>
+						<button class="tasks__card-toggle" :class="{ 'tasks__card-toggle--active': activeTask === 2 }" type="button" aria-label="Раскрыть карточку собственника" @click.stop="activeTask = activeTask === 2 ? -1 : 2">
+							<svg viewBox="0 0 37 37" aria-hidden="true"><circle cx="18.5" cy="18.5" r="18"></circle><line x1="18.5" y1="10" x2="18.5" y2="27"></line><line x1="10" y1="18.5" x2="27" y2="18.5"></line></svg>
+						</button>
+					</div>
+					<div class="tasks__card-body">
+						<div class="tasks__card-text-top">
+							<p class="tasks__card-short">для тех, кто хочет продать недвижимость достойно и без потери в цене</p>
+							<p class="tasks__card-desc">Вы получаете оценку объекта на основе реальных сделок, мы подготавливаем его к продаже и самостоятельно ведём работу с покупателями до результата.</p>
+						</div>
+						<div class="tasks__card-image"><img src="https://dummyimage.com/720x960/cabfb3/cabfb3.png&text=Owner" alt="Продажа недвижимости"></div>
+						<div class="tasks__card-btn-wrap">
+							<a class="tasks__card-btn btn btn--filled" href="#inquiry2">Оценить стоимость объекта</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="locations" x-data="{ activeLocation: 'zagaleta' }" aria-labelledby="locations-title">
+			<div class="locations__header">
+				<h2 class="locations__title" id="locations-title">Интерактивная карта</h2>
+				<p class="locations__subtitle">Районы Марбельи, которые<br>выбирают для жизни и капитала</p>
+				<a class="locations__btn btn btn--outline-dark" href="#inquiry">Подобрать район под мой запрос</a>
+			</div>
+			<div class="locations__map-container">
+				<div class="locations__map-placeholder"></div>
+				<div class="locations__tabs" role="tablist" aria-label="Районы Марбельи">
+					<button class="locations__tab" :class="{ 'locations__tab--active': activeLocation === 'zagaleta' }" type="button" @click="activeLocation = 'zagaleta'"><span class="locations__tab-dot"></span>La Zagaleta</button>
+					<span class="locations__tab-sep">/</span>
+					<button class="locations__tab" :class="{ 'locations__tab--active': activeLocation === 'sierra' }" type="button" @click="activeLocation = 'sierra'"><span class="locations__tab-dot"></span>Sierra Blanca</button>
+					<span class="locations__tab-sep">/</span>
+					<button class="locations__tab" :class="{ 'locations__tab--active': activeLocation === 'nueva' }" type="button" @click="activeLocation = 'nueva'"><span class="locations__tab-dot"></span>Nueva Andalucía</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="quiz" aria-labelledby="quiz-title">
+			<div class="quiz__bg"></div>
+			<div class="quiz__card">
+				<div class="quiz__card-inner">
+					<h2 class="quiz__title" id="quiz-title">Персональная подборка недвижимости в Марбелье</h2>
+					<p class="quiz__subtitle">Ответьте на несколько вопросов - мы подберём объекты и решения под ваш запрос</p>
+					<p class="quiz__note">с учётом бюджета, целей и юридических нюансов</p>
+					<div class="quiz__action">
+						<a class="quiz__btn btn btn--filled" href="#inquiry2">Начать подбор</a>
+						<p class="quiz__disclaimer">Без обязательств / Конфиденциально / Под ваш запрос</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="solutions" x-data="{ activeSolution: 0 }" aria-labelledby="solutions-title">
+			<h2 class="solutions__title" id="solutions-title">Решения по недвижимости</h2>
+			<div class="solutions__grid">
+				<div class="solutions__nav">
+					<div>
+						<button class="solutions__nav-item" :class="{ 'solutions__nav-item--active': activeSolution === 0 }" type="button" @click="activeSolution = 0"><span class="solutions__nav-dot"></span><span class="solutions__nav-text">Покупка</span></button>
+						<p class="solutions__nav-desc">Подбираем ликвидные объекты под жизнь, переезд или семейный капитал.</p>
+					</div>
+					<div class="solutions__nav-line"></div>
+					<div>
+						<button class="solutions__nav-item" :class="{ 'solutions__nav-item--active': activeSolution === 1 }" type="button" @click="activeSolution = 1"><span class="solutions__nav-dot"></span><span class="solutions__nav-text">Инвестиции</span></button>
+						<p class="solutions__nav-desc">Строим стратегию входа, доходности и выхода из проекта под ваш горизонт.</p>
+					</div>
+					<div class="solutions__nav-line"></div>
+					<div>
+						<button class="solutions__nav-item" :class="{ 'solutions__nav-item--active': activeSolution === 2 }" type="button" @click="activeSolution = 2"><span class="solutions__nav-dot"></span><span class="solutions__nav-text">Девелопмент</span></button>
+						<p class="solutions__nav-desc">Сопровождаем участок, проект, лицензии, реализацию и продажи в одном контуре.</p>
+					</div>
+					<div class="solutions__nav-line"></div>
+					<div>
+						<button class="solutions__nav-item" :class="{ 'solutions__nav-item--active': activeSolution === 3 }" type="button" @click="activeSolution = 3"><span class="solutions__nav-dot"></span><span class="solutions__nav-text">Продажа</span></button>
+						<p class="solutions__nav-desc">Формируем позиционирование объекта и ведём сделку до закрытия без потери контроля.</p>
+					</div>
+				</div>
+				<div class="solutions__image">
+					<img class="solutions__image-pic" src="https://dummyimage.com/1200x1600/d8d3cc/d8d3cc.png&text=Solutions" alt="Решения по недвижимости">
+					<a class="solutions__btn btn btn--outline-light" href="#inquiry2">Получить персональную стратегию</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="partner" x-data="{ activePartner: 0 }" aria-labelledby="partner-title">
+			<h2 class="partner__title" id="partner-title">Один партнёр<br>на весь цикл работы<br>с недвижимостью</h2>
+			<div class="partner__grid">
+				<div class="partner__image"><img class="partner__image-pic" src="https://dummyimage.com/1200x1600/d6d4d0/d6d4d0.png&text=Partner" alt="Партнёрство с Inmolux"></div>
+				<div class="partner__accordion">
+					<div class="partner__item" :class="{ 'partner__item--active': activePartner === 0 }">
+						<button class="partner__item-header" type="button" @click="activePartner = activePartner === 0 ? -1 : 0"><span class="partner__item-title">Полный цикл работы</span><span class="partner__item-icon" :class="{ 'partner__item-icon--active': activePartner === 0 }">+</span></button>
+						<div class="partner__item-body" x-show="activePartner === 0"><p class="partner__item-desc">От поиска и проверки участка до получения лицензий, реализации проекта, продаж и постпродажного обслуживания объектов.</p></div>
+					</div>
+					<div class="partner__divider"></div>
+					<div class="partner__item" :class="{ 'partner__item--active': activePartner === 1 }">
+						<button class="partner__item-header" type="button" @click="activePartner = activePartner === 1 ? -1 : 1"><span class="partner__item-title">Юридическая и техническая экспертиза</span><span class="partner__item-icon" :class="{ 'partner__item-icon--active': activePartner === 1 }">+</span></button>
+						<div class="partner__item-body" x-show="activePartner === 1"><p class="partner__item-desc">Проверяем документы, правовой статус, ограничения, техническое состояние и структуру сделки до принятия решения.</p></div>
+					</div>
+					<div class="partner__divider"></div>
+					<div class="partner__item" :class="{ 'partner__item--active': activePartner === 2 }">
+						<button class="partner__item-header" type="button" @click="activePartner = activePartner === 2 ? -1 : 2"><span class="partner__item-title">Продажи и доступ к рынку</span><span class="partner__item-icon" :class="{ 'partner__item-icon--active': activePartner === 2 }">+</span></button>
+						<div class="partner__item-body" x-show="activePartner === 2"><p class="partner__item-desc">Открываем доступ к собственной и партнёрской базе предложений, международному спросу и точной работе с целевой аудиторией.</p></div>
+					</div>
+					<div class="partner__divider"></div>
+					<div class="partner__item" :class="{ 'partner__item--active': activePartner === 3 }">
+						<button class="partner__item-header" type="button" @click="activePartner = activePartner === 3 ? -1 : 3"><span class="partner__item-title">Масштаб и текущие проекты</span><span class="partner__item-icon" :class="{ 'partner__item-icon--active': activePartner === 3 }">+</span></button>
+						<div class="partner__item-body" x-show="activePartner === 3"><p class="partner__item-desc">Сопровождаем частные сделки, проекты редевелопмента и вывод объектов на рынок в премиальных локациях Costa del Sol.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="numbers" aria-labelledby="numbers-title">
+			<div class="numbers__header">
+				<h2 class="numbers__title" id="numbers-title">Опыт, который снимает риски и экономит время клиентов</h2>
+				<p class="numbers__subtitle">Сопровождаем проекты и объекты на всех этапах - без передачи ответственности между подрядчиками</p>
+			</div>
+			<div class="numbers__grid">
+				<article class="numbers__stat numbers__stat--0"><div class="numbers__stat-number">30 000+</div><div class="numbers__stat-label">Объектов в собственной и партнёрской базе предложений</div></article>
+				<article class="numbers__stat numbers__stat--1"><div class="numbers__stat-number">15+</div><div class="numbers__stat-label">Лет работы на рынке недвижимости Марбельи и Costa del Sol</div></article>
+				<div class="numbers__image numbers__image--main"><img class="numbers__image-pic" src="https://dummyimage.com/1200x900/d5d7d6/d5d7d6.png&text=Team" alt="Команда Inmolux"></div>
+				<div class="numbers__image numbers__image--secondary"><img class="numbers__image-pic" src="https://dummyimage.com/700x500/d9d6d2/d9d6d2.png&text=Projects" alt="Проекты Inmolux"></div>
+				<article class="numbers__stat numbers__stat--2"><div class="numbers__stat-number">5 000+</div><div class="numbers__stat-label">Клиентов<br>80% сделок - по личным рекомендациям</div></article>
+				<article class="numbers__stat numbers__stat--3"><div class="numbers__stat-number">8</div><div class="numbers__stat-label">языков команды<br>EN / ES / FR / IT / DE / LV / UA / RU</div></article>
+			</div>
+		</section>
+
+		<section class="inquiry" id="inquiry" aria-labelledby="inquiry-title">
+			<div class="inquiry__bg"></div>
+			<div class="inquiry__card">
+				<div class="inquiry__card-inner">
+					<div class="inquiry__header">
+						<h2 class="inquiry__title" id="inquiry-title">ЗАПРОС ПО НЕДВИЖИМОСТИ<br>В МАРБЕЛЬЕ</h2>
+						<p class="inquiry__subtitle">Чтобы консультация была предметной, пожалуйста, укажите<br>ключевые параметры вашего запроса.</p>
+						<p class="inquiry__note">Это позволит нам подготовить релевантные решения заранее</p>
+					</div>
+					<form class="inquiry__form" action="#" method="post">
+						<div class="inquiry__form-grid">
+							<div class="inquiry__field"><label class="inquiry__label" for="inquiry-budget">Бюджет</label><select class="inquiry__select" id="inquiry-budget" name="budget"><option>Бюджет</option><option>до 1 млн €</option><option>1–3 млн €</option><option>3 млн €+</option></select></div>
+							<div class="inquiry__field"><label class="inquiry__label" for="inquiry-goal">Цель</label><select class="inquiry__select" id="inquiry-goal" name="goal"><option>Цель</option><option>Покупка</option><option>Инвестиции</option><option>Девелопмент</option></select></div>
+							<div class="inquiry__field"><label class="inquiry__label" for="inquiry-time">Сроки</label><select class="inquiry__select" id="inquiry-time" name="time"><option>Сроки</option><option>Срочно</option><option>1–3 месяца</option><option>3+ месяцев</option></select></div>
+							<div class="inquiry__field"><label class="inquiry__label" for="inquiry-citizenship">Гражданство</label><select class="inquiry__select" id="inquiry-citizenship" name="citizenship"><option>Гражданство</option><option>Испания</option><option>ЕС</option><option>Великобритания</option><option>Другое</option></select></div>
+						</div>
+						<div class="inquiry__footer">
+							<p class="inquiry__privacy-note">Без спама и рекламы. Только 1 экспертный ответ</p>
+							<button class="inquiry__submit btn btn--filled" type="submit">ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ</button>
+							<p class="inquiry__legal">Отправляя, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и пользовательским соглашением</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section class="risks" aria-labelledby="risks-title">
+			<div class="risks__header">
+				<span class="risks__suptitle">рынок Испании</span>
+				<h2 class="risks__title" id="risks-title">Управляем ключевыми<br>рисками рынка Испании</h2>
+				<p class="risks__subtitle">В работе с недвижимостью в Испании ключевые риски всегда одни и те же. Мы заранее закладываем решения в процесс, чтобы вам не приходилось сталкиваться с ними в момент сделки или строительства.</p>
+			</div>
+			<div class="risks__grid">
+				<article class="risks__card"><div class="risks__card-text"><h3 class="risks__card-title">Юридическая чистота</h3><p class="risks__card-desc">Проверяем статус объекта, ограничения, документы и обязательства сторон до подписания.</p></div><div class="risks__card-image"><img class="risks__card-pic" src="https://dummyimage.com/800x800/d7d7d7/d7d7d7.png&text=Legal" alt="Юридическая проверка"></div></article>
+				<article class="risks__card"><div class="risks__card-text"><h3 class="risks__card-title">Финансовая модель</h3><p class="risks__card-desc">Считаем бюджет, налоги, операционные расходы и сценарии выхода до принятия решения.</p></div><div class="risks__card-image"><img class="risks__card-pic" src="https://dummyimage.com/800x800/d8d3cb/d8d3cb.png&text=Finance" alt="Финансовая модель"></div></article>
+				<article class="risks__card"><div class="risks__card-text"><h3 class="risks__card-title">Контроль реализации</h3><p class="risks__card-desc">Держим сроки, бюджет и отчётность под контролем при покупке, ремонте или девелопменте.</p></div><div class="risks__card-image"><img class="risks__card-pic" src="https://dummyimage.com/800x800/d2d5d7/d2d5d7.png&text=Control" alt="Контроль реализации"></div></article>
+			</div>
+			<div class="risks__footer"><a class="risks__btn btn btn--outline-dark" href="#inquiry2">Получить консультацию</a></div>
+		</section>
+
+		<section class="process" x-data="{ activeProcess: 'invest' }" aria-labelledby="process-title">
+			<div class="process__header">
+				<h2 class="process__title" id="process-title">Прозрачный процесс<br>от первого контакта до результата</h2>
+				<p class="process__subtitle">Понятная последовательность действий снижает риски и упрощает принятие решения уже на первом этапе</p>
+			</div>
+			<div class="process__tabs">
+				<button class="process__tab" :class="{ 'process__tab--active': activeProcess === 'invest' }" type="button" @click="activeProcess = 'invest'">для инвестора</button>
+				<button class="process__tab" :class="{ 'process__tab--active': activeProcess === 'buy' }" type="button" @click="activeProcess = 'buy'">для покупателя</button>
+				<button class="process__tab" :class="{ 'process__tab--active': activeProcess === 'owner' }" type="button" @click="activeProcess = 'owner'">для собственника</button>
+			</div>
+			<div class="process__grid">
+				<div class="process__image process__image--1"><img class="process__image-pic" src="https://dummyimage.com/900x700/d6d2cc/d6d2cc.png&text=Process+1" alt="Процесс сделки"></div>
+				<article class="process__step process__step--0"><h3 class="process__step-title">Бриф и задача</h3><p class="process__step-desc">Фиксируем цели клиента, бюджет, сроки и ограничения сделки.</p></article>
+				<article class="process__step process__step--1"><h3 class="process__step-title">Подбор стратегии</h3><p class="process__step-desc">Определяем формат покупки, инвестирования или девелопмента.</p></article>
+				<article class="process__step process__step--2"><h3 class="process__step-title">Проверка объекта</h3><p class="process__step-desc">Проводим юридическую и техническую экспертизу до принятия решения.</p></article>
+				<div class="process__image process__image--2"><img class="process__image-pic" src="https://dummyimage.com/1400x1000/d4d2cf/d4d2cf.png&text=Process+2" alt="Этапы реализации"></div>
+				<article class="process__step process__step--3"><h3 class="process__step-title">Структура сделки</h3><p class="process__step-desc">Согласовываем условия, этапы оплаты и набор сопровождающих документов.</p></article>
+				<article class="process__step process__step--4"><h3 class="process__step-title">Реализация</h3><p class="process__step-desc">Контролируем исполнение, взаимодействие с банком, нотариусом и подрядчиками.</p></article>
+				<article class="process__step process__step--5"><h3 class="process__step-title">Передача</h3><p class="process__step-desc">Фиксируем закрытие сделки и передачу объекта или актива под управление.</p></article>
+				<article class="process__step process__step--6"><h3 class="process__step-title">Поддержка после сделки</h3><p class="process__step-desc">Остаёмся в проекте после закрытия: управление, отчётность, перепродажа или выход.</p></article>
+			</div>
+			<div class="process__footer"><a class="process__btn btn btn--outline-dark" href="#inquiry2">Обсудить процесс</a></div>
+		</section>
+
+		<section class="awards2" x-data="{ activeSlide: 0, totalSlides: 3 }" aria-labelledby="awards2-title">
+			<div class="awards2__header">
+				<p class="awards2__suptitle">профессиональные обязательства</p>
+				<h2 class="awards2__title" id="awards2-title">Ответственность InmoLux, закреплённая на практике</h2>
+			</div>
+			<div class="awards2__content">
+				<div class="awards2__photo"></div>
+				<div class="awards2__slider">
+					<div class="awards2__slide" x-show="activeSlide === 0"><div class="awards2__slide-image awards2__slide-image--1"></div></div>
+					<div class="awards2__slide" x-show="activeSlide === 1"><div class="awards2__slide-image awards2__slide-image--2"></div></div>
+					<div class="awards2__slide" x-show="activeSlide === 2"><div class="awards2__slide-image awards2__slide-image--3"></div></div>
+					<div class="awards2__slider-nav">
+						<button class="awards2__slider-prev" type="button" aria-label="Предыдущий слайд" @click="activeSlide = activeSlide === 0 ? totalSlides - 1 : activeSlide - 1">←</button>
+						<span class="awards2__slider-counter" x-text="String(activeSlide + 1).padStart(2, '0') + '/' + String(totalSlides).padStart(2, '0')"></span>
+						<button class="awards2__slider-next" type="button" aria-label="Следующий слайд" @click="activeSlide = activeSlide === totalSlides - 1 ? 0 : activeSlide + 1">→</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="testimonials" aria-labelledby="testimonials-title">
+			<div class="testimonials__header">
+				<h2 class="testimonials__title" id="testimonials-title">Успешные сделки</h2>
+				<p class="testimonials__subtitle">Отзывы клиентов, которые пришли по рекомендации и прошли сделку с одной командой</p>
+			</div>
+			<div class="testimonials__grid">
+				<article class="testimonials__card"><div class="testimonials__card-avatar"></div><h3 class="testimonials__card-name">Andrea Arcia</h3><p class="testimonials__card-title">Обратился за покупкой жилья из Украины</p><p class="testimonials__card-text">С самого первого дня я всем говорила, что из четырёх вариантов продажи моего дома в Аликанте мне очень повезло выбрать именно Inmolux. Команда сопровождала меня, направляла и терпеливо выдержала весь процесс до оформления документов.</p><p class="testimonials__card-date">03.04.2025</p></article>
+				<article class="testimonials__card"><div class="testimonials__card-avatar"></div><h3 class="testimonials__card-name">Chus silvestre</h3><p class="testimonials__card-title">Обратился за продажей жилья в Испании</p><p class="testimonials__card-text">Я очень доволен услугами агента по недвижимости. Команда быстро продала мой дом, оформила документы и сопровождала меня на протяжении всего процесса. Настоящие профессионалы и замечательные люди.</p><p class="testimonials__card-date">03.04.2025</p></article>
+				<article class="testimonials__card"><div class="testimonials__card-avatar"></div><h3 class="testimonials__card-name">Карлос Родригес</h3><p class="testimonials__card-title">Обратился с желанием инвестировать</p><p class="testimonials__card-text">Я купил недвижимость, и мне помог Альберто — очень приятный и профессиональный человек. С первой минуты он излучал открытость и уверенность, помог с выбором недвижимости и финансированием.</p><p class="testimonials__card-date">03.04.2025</p></article>
+			</div>
+			<div class="testimonials__footer"><a class="testimonials__btn btn btn--outline-dark" href="#inquiry2">больше отзывов</a></div>
+		</section>
+
+		<section class="logos-marquee" aria-label="Партнёрские сервисы">
+			<div class="logos-marquee__track">
+				<div class="logos-marquee__inner">
+					<span class="logos-marquee__item">Revolut</span>
+					<span class="logos-marquee__item">Wise</span>
+					<span class="logos-marquee__item">Bitcoin</span>
+					<span class="logos-marquee__item">Ethereum</span>
+					<span class="logos-marquee__item">USDT</span>
+					<span class="logos-marquee__item">Revolut</span>
+					<span class="logos-marquee__item">Wise</span>
+					<span class="logos-marquee__item">Bitcoin</span>
+					<span class="logos-marquee__item">Ethereum</span>
+					<span class="logos-marquee__item">USDT</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="inquiry2" id="inquiry2" aria-labelledby="inquiry2-title">
+			<div class="inquiry2__bg"></div>
+			<div class="inquiry2__card">
+				<div class="inquiry2__card-inner">
+					<div class="inquiry2__header">
+						<h2 class="inquiry2__title" id="inquiry2-title">Персональный разбор<br>вашего запроса с экспертом</h2>
+						<p class="inquiry2__subtitle">Мы заранее анализируем ваш запрос, бюджет, сроки и правовой контекст и готовим сценарий действий:</p>
+						<p class="inquiry2__note">покупка, инвестиции или девелопмент</p>
+					</div>
+					<form action="#" method="post">
+						<div class="inquiry2__form-grid">
+							<div class="inquiry2__field"><label class="inquiry2__label" for="inquiry2-budget">Бюджет</label><select class="inquiry__select" id="inquiry2-budget" name="budget"><option>Бюджет</option><option>до 1 млн €</option><option>1–3 млн €</option><option>3 млн €+</option></select></div>
+							<div class="inquiry2__field"><label class="inquiry2__label" for="inquiry2-goal">Цель</label><select class="inquiry__select" id="inquiry2-goal" name="goal"><option>Цель</option><option>Покупка</option><option>Инвестиции</option><option>Девелопмент</option></select></div>
+							<div class="inquiry2__field"><label class="inquiry2__label" for="inquiry2-time">Сроки</label><select class="inquiry__select" id="inquiry2-time" name="time"><option>Сроки</option><option>Срочно</option><option>1–3 месяца</option><option>3+ месяцев</option></select></div>
+							<div class="inquiry2__field"><label class="inquiry2__label" for="inquiry2-citizenship">Гражданство</label><select class="inquiry__select" id="inquiry2-citizenship" name="citizenship"><option>Гражданство</option><option>Испания</option><option>ЕС</option><option>Великобритания</option><option>Другое</option></select></div>
+						</div>
+						<div class="inquiry2__footer">
+							<p class="inquiry2__privacy">Без спама и рекламы. Только 1 экспертный ответ</p>
+							<button class="inquiry2__submit btn btn--filled" type="submit">Запросить консультацию</button>
+							<p class="inquiry2__legal">Отправляя, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и пользовательским соглашением</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section class="faq" x-data="{ faqTab: 'buy', openFaq: 0 }" aria-labelledby="faq-title">
+			<div class="faq__header">
+				<h2 class="faq__title" id="faq-title">Часто задаваемые вопросы</h2>
+			</div>
+			<div class="faq__tabs">
+				<button class="faq__tab" :class="{ 'faq__tab--active': faqTab === 'buy' }" type="button" @click="faqTab = 'buy'">Покупка</button>
+				<button class="faq__tab" :class="{ 'faq__tab--active': faqTab === 'invest' }" type="button" @click="faqTab = 'invest'">Инвестиции</button>
+				<button class="faq__tab" :class="{ 'faq__tab--active': faqTab === 'legal' }" type="button" @click="faqTab = 'legal'">Сделка</button>
+			</div>
+			<ul class="faq__list">
+				<li class="faq__item" :class="{ 'faq__item--active': openFaq === 0 }"><button class="faq__item-header" type="button" @click="openFaq = openFaq === 0 ? -1 : 0"><span class="faq__item-title">Сколько занимает подбор объекта?</span><span class="faq__item-icon" :class="{ 'faq__item-icon--open': openFaq === 0 }">+</span></button><div class="faq__item-body" x-show="openFaq === 0"><p class="faq__item-answer">Срок зависит от задачи, бюджета и локации. Обычно первый shortlist по релевантным вариантам вы получаете после ручного брифа и уточнения параметров.</p></div></li>
+				<li class="faq__divider"></li>
+				<li class="faq__item" :class="{ 'faq__item--active': openFaq === 1 }"><button class="faq__item-header" type="button" @click="openFaq = openFaq === 1 ? -1 : 1"><span class="faq__item-title">Что входит в юридическую проверку?</span><span class="faq__item-icon" :class="{ 'faq__item-icon--open': openFaq === 1 }">+</span></button><div class="faq__item-body" x-show="openFaq === 1"><p class="faq__item-answer">Мы проверяем правовой статус объекта, ограничения, долги, лицензии, историю владения и комплект документов, необходимый для безопасной сделки.</p></div></li>
+				<li class="faq__divider"></li>
+				<li class="faq__item" :class="{ 'faq__item--active': openFaq === 2 }"><button class="faq__item-header" type="button" @click="openFaq = openFaq === 2 ? -1 : 2"><span class="faq__item-title">Можно ли сопровождать проект после покупки?</span><span class="faq__item-icon" :class="{ 'faq__item-icon--open': openFaq === 2 }">+</span></button><div class="faq__item-body" x-show="openFaq === 2"><p class="faq__item-answer">Да. Команда остаётся с вами после закрытия сделки: организация ремонта, управление объектом, запуск продаж или стратегия выхода входят в единый цикл сопровождения.</p></div></li>
+			</ul>
+		</section>
+	</main>
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__top">
+				<div class="site-footer__col site-footer__col--brand">
+					<a class="site-footer__logo" href="#" aria-label="InMolux">
+						<img class="site-footer__logo-img" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
+					</a>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Недвижимость Марбельи</span>
+						<span class="site-footer__value">Инвестиции, покупка, девелопмент</span>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Социальные сети</span>
+						<div class="site-footer__socials">
+							<a class="site-footer__social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
+							<a class="site-footer__social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M13 21V13H16L16.5 9H13V7C13 5.9 13.3 5 14.9 5H16.6V1.4C16.3 1.3 15.2 1 13.8 1C10.8 1 8.8 2.8 8.8 6.2V9H5.5V13H8.8V21H13Z" fill="currentColor"/></svg></a>
+							<a class="site-footer__social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9H10V21H6V9ZM8 3C9.1 3 10 3.9 10 5C10 6.1 9.1 7 8 7C6.9 7 6 6.1 6 5C6 3.9 6.9 3 8 3ZM12 9H15.8V10.7H15.9C16.4 9.7 17.7 8.7 19.6 8.7C23.4 8.7 24 11.1 24 14.3V21H20V15.1C20 13.7 20 11.9 18.1 11.9C16.2 11.9 15.9 13.4 15.9 15V21H12V9Z" fill="currentColor"/></svg></a>
+						</div>
+					</div>
+				</div>
+				<div class="site-footer__col site-footer__col--contacts">
+					<div class="site-footer__block">
+						<span class="site-footer__label">Телефон</span>
+						<a class="site-footer__value site-footer__value--link" href="tel:+34609868314">+34 609 868 314</a>
+						<a class="site-footer__value site-footer__value--link" href="tel:+34952770782">+34 952 770 782</a>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">Электронная почта</span>
+						<a class="site-footer__value site-footer__value--link" href="mailto:info@inmoluxgroup.com">info@inmoluxgroup.com</a>
+					</div>
+				</div>
+				<div class="site-footer__col site-footer__col--address">
+					<div class="site-footer__block">
+						<span class="site-footer__label">Адрес</span>
+						<address class="site-footer__value">Авеню Рикардо Сориано, 55.<br>29602 Марбелья, Малага.</address>
+					</div>
+					<div class="site-footer__block">
+						<span class="site-footer__label">График работы</span>
+						<span class="site-footer__value">пн-вс 08:00 – 22:00</span>
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__nav-row">
+				<ul class="site-footer__menu">
+					<li><a href="#tasks-title">Покупателям</a></li>
+					<li><a href="#tasks-title">Продавцам</a></li>
+					<li><a href="#solutions-title">Инвестиции</a></li>
+					<li><a href="#solutions-title">Проекты</a></li>
+					<li><a href="#numbers-title">О нас</a></li>
+					<li><a href="#inquiry2">Контакты</a></li>
+				</ul>
+				<div class="site-footer__lang">
+					<div class="lang-switcher">
+						<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__map-row">
+				<div class="site-footer__map-left">
+					<button class="site-footer__directions" type="button">Как к нам добраться</button>
+					<a class="site-footer__cta-btn" href="#inquiry2">Задать вопросы</a>
+				</div>
+				<div class="site-footer__map-right">
+					<div class="site-footer__map-embed">
+						<img src="https://dummyimage.com/1200x534/e8e8e8/e8e8e8.png&text=Office+Map" alt="Office map">
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__payments-row">
+				<div class="site-footer__payments">
+					<span class="site-footer__pay-icon">VISA</span>
+					<span class="site-footer__pay-icon">MC</span>
+					<span class="site-footer__pay-icon">SWIFT</span>
+					<span class="site-footer__pay-icon">USDT</span>
+					<span class="site-footer__pay-icon">BTC</span>
+				</div>
+			</div>
+			<div class="site-footer__legal-row">
+				<div class="site-footer__copyright">© 2019–2025 InmoLux</div>
+				<div class="site-footer__legal-links">
+					<a href="#">Политика конфиденциальности</a>
+					<a href="#">Политика использования файлов cookie</a>
+				</div>
+				<div class="site-footer__credits">Сайт разработан</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

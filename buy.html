@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>InMolux - Покупка недвижимости</title>
+	<script type="module" src="http://localhost:3000/@vite/client"></script>
+	<script type="module" src="http://localhost:3000/assets/src/js/main.js"></script>
+</head>
+<body x-data="{ activeStep: 1, activeFaq: 0 }">
+	<main class="page-buy">
+		<section class="buy-hero">
+			<div class="buy-hero__bg">
+				<img src="https://dummyimage.com/1920x1080/41545c/41545c.png&text=Buy+Hero" alt="Покупка недвижимости в Марбелье">
+			</div>
+			<div class="container">
+				<nav class="breadcrumbs" aria-label="Хлебные крошки">
+					<ol class="breadcrumbs__list">
+						<li><a class="breadcrumbs__link" href="./index.html">Главная</a></li>
+						<li><span class="breadcrumbs__separator">/</span></li>
+						<li class="breadcrumbs__item--current">Покупателям</li>
+					</ol>
+				</nav>
+				<div class="buy-hero__content">
+					<div class="buy-hero__text">
+						<h1 class="buy-hero__title">Покупка недвижимости в Марбелье с полным сопровождением сделки</h1>
+						<p class="buy-hero__subtitle">Подбор, проверка объекта, переговоры, оформление и постпродажный сервис в одном процессе.</p>
+					</div>
+					<div class="buy-hero__actions">
+						<a class="btn btn--outline-white" href="#buy-faq">Задать вопрос по покупке</a>
+					</div>
+				</div>
+				<div class="buy-hero__stats">
+					<div class="buy-hero__stat"><span>15 лет</span>работы в Испании и сопровождения сделок</div>
+					<div class="buy-hero__stat"><span>5 000+</span>закрытых сделок и показов по объектам</div>
+					<div class="buy-hero__stat"><span>200+ млн €</span>под управлением и в девелоперских проектах</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-catalog">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title">Каталог объектов под ваш сценарий покупки</h2>
+					<p class="section-subtitle text-t1">Подбираем ликвидные варианты для жизни, сезонного пребывания или семейного капитала.</p>
+				</div>
+				<div class="property-grid">
+					<article class="property-card">
+						<div class="property-card__gallery">
+							<div class="property-card-slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d8d3cc/d8d3cc.png&text=Villa" alt="Вилла"></div>
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d7d2cb/d7d2cb.png&text=Pool" alt="Бассейн"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+							<div class="swiper-counter">01/02</div>
+						</div>
+						<div class="property-card__content">
+							<p class="property-card__type text-small">Вилла / Golden Mile</p>
+							<h3 class="property-card__title"><a href="./single.html">Современная вилла с видом на море</a></h3>
+							<div class="property-card__specs">
+								<span class="spec-item">5 спален</span>
+								<span class="spec-item">6 ванных</span>
+								<span class="spec-item">640 m²</span>
+							</div>
+							<p class="text-t1">€ 8 800 000</p>
+						</div>
+					</article>
+					<article class="property-card">
+						<div class="property-card__gallery">
+							<div class="property-card-slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/cfd5d8/cfd5d8.png&text=Apartment" alt="Апартаменты"></div>
+									<div class="swiper-slide"><img src="https://dummyimage.com/900x700/d6d4d0/d6d4d0.png&text=View" alt="Вид"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+							<div class="swiper-counter">01/02</div>
+						</div>
+						<div class="property-card__content">
+							<p class="property-card__type text-small">Апартаменты / Puente Romano</p>
+							<h3 class="property-card__title"><a href="./single.html">Резиденция в пешей доступности от моря</a></h3>
+							<div class="property-card__specs">
+								<span class="spec-item">3 спальни</span>
+								<span class="spec-item">3 ванных</span>
+								<span class="spec-item">195 m²</span>
+							</div>
+							<p class="text-t1">€ 4 250 000</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-personal">
+			<div class="container">
+				<div class="buy-personal__inner">
+					<div class="buy-personal__content">
+						<h2 class="section-title">Персональный подбор без перегруза лишними показами</h2>
+						<p class="section-subtitle">Работаем только с объектами, которые проходят по задаче, бюджету и срокам.</p>
+						<div class="buy-personal__desc">
+							<p>Формируем shortlist, проверяем документы, организуем показы и даём объективную оценку по каждой позиции.</p>
+						</div>
+						<a class="btn btn--outline" href="./catalog.html">Открыть каталог</a>
+					</div>
+					<div class="buy-personal__image">
+						<img src="https://dummyimage.com/900x900/d5d7d6/d5d7d6.png&text=Personal+Selection" alt="Персональный подбор недвижимости">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-districts">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title">Ключевые районы Марбельи под разные сценарии</h2>
+					<p class="section-subtitle text-t1">Сопоставляем ваш запрос с локацией, типом застройки и дальнейшей ликвидностью.</p>
+				</div>
+				<div class="buy-districts__grid">
+					<article class="district-card"><img src="https://dummyimage.com/720x960/cfd5d8/cfd5d8.png&text=Golden+Mile" alt="Golden Mile"></article>
+					<article class="district-card"><img src="https://dummyimage.com/720x960/d7d2cb/d7d2cb.png&text=Nueva+Andalucia" alt="Nueva Andalucia"></article>
+					<article class="district-card"><img src="https://dummyimage.com/720x960/cabfb3/cabfb3.png&text=San+Pedro" alt="San Pedro"></article>
+				</div>
+				<div class="buy-districts__desc">
+					<p>Под каждую локацию даём ориентир по уровню приватности, инфраструктуре, типу аудитории и темпу роста цен.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-steps">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title">5 шагов покупки недвижимости мечты в Испании</h2>
+					<p class="section-subtitle text-t1">От первой консультации до регистрации права собственности и передачи объекта в управление.</p>
+				</div>
+				<div class="buy-steps__layout">
+					<div class="buy-steps__list">
+						<article class="step-item" :class="{ 'active': activeStep === 1 }" @click="activeStep = 1">
+							<div class="step-item__header">
+								<span class="step-item__number">01</span>
+								<h3 class="step-item__title">Формируем задачу и критерии поиска</h3>
+							</div>
+							<div class="step-item__body" x-show="activeStep === 1" x-collapse>
+								<p class="step-item__desc">Согласуем бюджет, тип недвижимости, формат владения, сроки выхода на сделку и личные приоритеты семьи или инвестора.</p>
+								<div class="step-item__mobile-img"><img src="https://dummyimage.com/900x700/d6d2cc/d6d2cc.png&text=Step+1" alt="Шаг 1"></div>
+							</div>
+						</article>
+						<article class="step-item" :class="{ 'active': activeStep === 2 }" @click="activeStep = 2">
+							<div class="step-item__header">
+								<span class="step-item__number">02</span>
+								<h3 class="step-item__title">Отбираем объекты и организуем показы</h3>
+							</div>
+							<div class="step-item__body" x-show="activeStep === 2" x-collapse>
+								<p class="step-item__desc">Готовим shortlist без лишних просмотров и синхронизируем показы с вашим графиком пребывания в Испании.</p>
+								<div class="step-item__mobile-img"><img src="https://dummyimage.com/900x700/d4d2cf/d4d2cf.png&text=Step+2" alt="Шаг 2"></div>
+							</div>
+						</article>
+						<article class="step-item" :class="{ 'active': activeStep === 3 }" @click="activeStep = 3">
+							<div class="step-item__header">
+								<span class="step-item__number">03</span>
+								<h3 class="step-item__title">Проводим due diligence и переговоры</h3>
+							</div>
+							<div class="step-item__body" x-show="activeStep === 3" x-collapse>
+								<p class="step-item__desc">Проверяем право собственности, лицензии, задолженности и сопровождаем переговоры по цене и условиям.</p>
+								<div class="step-item__mobile-img"><img src="https://dummyimage.com/900x700/d8d4cf/d8d4cf.png&text=Step+3" alt="Шаг 3"></div>
+							</div>
+						</article>
+					</div>
+					<div class="buy-steps__images">
+						<div class="step-image" x-show="activeStep === 1"><img src="https://dummyimage.com/1000x1200/d6d2cc/d6d2cc.png&text=Search+Criteria" alt="Поиск"></div>
+						<div class="step-image" x-show="activeStep === 2"><img src="https://dummyimage.com/1000x1200/d4d2cf/d4d2cf.png&text=Viewing" alt="Показы"></div>
+						<div class="step-image" x-show="activeStep === 3"><img src="https://dummyimage.com/1000x1200/d8d4cf/d8d4cf.png&text=Due+Diligence" alt="Проверка"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-postsale">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title">Постпродажная поддержка после выхода на сделку</h2>
+					<p class="buy-postsale__intro">Помогаем с обустройством, подключением сервисов, управлением объектом и операционными задачами после закрытия сделки.</p>
+				</div>
+				<div class="buy-postsale__grid">
+					<article class="postsale-item">
+						<h3 class="postsale-item__title">Юридическое и банковское сопровождение</h3>
+						<p class="postsale-item__desc">Счета, контракты, налоги, страхование и коммуникация с локальными провайдерами.</p>
+					</article>
+					<article class="postsale-item">
+						<h3 class="postsale-item__title">Комплектация и ремонт</h3>
+						<p class="postsale-item__desc">Подключаем подрядчиков, контролируем бюджет и сохраняем единый стандарт исполнения.</p>
+					</article>
+					<article class="postsale-item">
+						<h3 class="postsale-item__title">Дальнейшее управление активом</h3>
+						<p class="postsale-item__desc">Если объект покупается как инвестиция, настраиваем модель аренды и управления.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="buy-faq" id="buy-faq">
+			<div class="container">
+				<div class="buy-faq__grid">
+					<div class="buy-faq__header">
+						<h2 class="section-title">Что важно знать перед покупкой недвижимости в Испании</h2>
+					</div>
+					<div class="buy-faq__content">
+						<article class="accordion-item" :class="{ 'active': activeFaq === 0 }">
+							<button class="accordion-item__trigger" type="button" @click="activeFaq = activeFaq === 0 ? -1 : 0">
+								<span class="accordion-item__title">Какие налоги и обязательные платежи возникают при покупке?</span>
+								<span class="accordion-item__icon">+</span>
+							</button>
+							<div class="accordion-item__content" x-show="activeFaq === 0" x-collapse>
+								<div class="accordion-item__inner">
+									<p>В структуру расходов входят трансферный налог или НДС, нотариальные расходы, регистрация, юридическое сопровождение и возможные банковские сборы.</p>
+								</div>
+							</div>
+						</article>
+						<article class="accordion-item" :class="{ 'active': activeFaq === 1 }">
+							<button class="accordion-item__trigger" type="button" @click="activeFaq = activeFaq === 1 ? -1 : 1">
+								<span class="accordion-item__title">Какие дополнительные расходы возникают после покупки?</span>
+								<span class="accordion-item__icon">+</span>
+							</button>
+							<div class="accordion-item__content" x-show="activeFaq === 1" x-collapse>
+								<div class="accordion-item__inner">
+									<p>После сделки учитываются коммунальные платежи, ежегодные налоги, страхование, обслуживание территории и, при необходимости, управление арендой.</p>
+								</div>
+							</div>
+						</article>
+						<article class="accordion-item" :class="{ 'active': activeFaq === 2 }">
+							<button class="accordion-item__trigger" type="button" @click="activeFaq = activeFaq === 2 ? -1 : 2">
+								<span class="accordion-item__title">Может ли нерезидент получить ипотеку в Испании?</span>
+								<span class="accordion-item__icon">+</span>
+							</button>
+							<div class="accordion-item__content" x-show="activeFaq === 2" x-collapse>
+								<div class="accordion-item__inner">
+									<p>Да, но условия зависят от структуры доходов, страны резидентства, банковской истории и выбранного объекта. Мы подготавливаем документы и подключаем банк на раннем этапе.</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

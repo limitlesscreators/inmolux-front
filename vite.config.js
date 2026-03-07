@@ -56,7 +56,7 @@ export default defineConfig({
   root: '',
   base: './',
   build: {
-    outDir: path.resolve(__dirname, './dist'),
+    outDir: path.resolve(__dirname, './docs'),
     emptyOutDir: true,
     rollupOptions: {
       input: getHtmlEntries(),

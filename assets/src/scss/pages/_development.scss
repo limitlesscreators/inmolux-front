@@ -1,10 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ==========================================================================
-// DEVELOPMENT ARCHIVE STYLES
-// ==========================================================================
-
 .archive-development {
   background-color: var(--color-white);
   color: var(--text-black);
@@ -58,15 +54,27 @@
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0.7px;
+    white-space: nowrap;
 
     @include breakpoint-down($bp-tablet) {
       width: 100%;
       max-width: 330px;
     }
 
+    @include breakpoint-up($bp-tablet) {
+      font-size: 12px;
+      letter-spacing: 0.24px;
+    }
+
     @include breakpoint-up($bp-laptop) {
+      min-height: 50px;
       font-size: 16px;
       letter-spacing: 0.8px;
+    }
+
+    @include breakpoint-up($bp-desktop) {
+      font-size: 25px;
+      letter-spacing: 1.25px;
     }
 
     &--filled {
@@ -93,9 +101,17 @@
       margin-bottom: 72px;
     }
 
+    @include breakpoint-up($bp-desktop) {
+      max-width: 1744px;
+    }
+
     &--narrow {
       @include breakpoint-up($bp-laptop) {
         max-width: 1018px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        max-width: 1629px;
       }
     }
 
@@ -105,8 +121,44 @@
       line-height: 1.1;
 
       @include breakpoint-up($bp-tablet) {
+        font-size: 35px;
+        line-height: 1.1;
+      }
+
+      @include breakpoint-up($bp-laptop) {
         font-size: 50px;
         line-height: 1.03;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 80px;
+        line-height: 1.1;
+      }
+
+      &-mobile {
+        display: block;
+
+        @include breakpoint-up($bp-tablet) {
+          display: none;
+        }
+      }
+
+      &-desktop {
+        display: none;
+
+        @include breakpoint-up($bp-tablet) {
+          display: block;
+        }
+      }
+    }
+
+    &__lead {
+      margin: 10px 0 0;
+      font-size: 20px;
+      line-height: 1.3;
+
+      @include breakpoint-up($bp-tablet) {
+        display: none;
       }
     }
   }
@@ -128,13 +180,17 @@
       text-align: center;
 
       @include breakpoint-up($bp-tablet) {
-        max-width: 688px;
+        max-width: 723px;
         margin-bottom: 60px;
       }
 
       @include breakpoint-up($bp-laptop) {
         max-width: 1063px;
         margin-bottom: 50px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        max-width: 1701px;
       }
     }
 
@@ -144,14 +200,13 @@
       line-height: 1.3;
 
       @include breakpoint-up($bp-tablet) {
-        margin-bottom: 12px;
-        font-size: 32px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 1.1;
       }
 
       @include breakpoint-up($bp-laptop) {
-        margin-bottom: 18px;
-        font-size: 50px;
-        line-height: 1.1;
+        display: none;
       }
     }
 
@@ -162,14 +217,35 @@
 
       @include breakpoint-up($bp-tablet) {
         margin-bottom: 24px;
-        font-size: 50px;
-        line-height: 1.03;
+        font-size: 35px;
+        line-height: 1.1;
       }
 
       @include breakpoint-up($bp-laptop) {
         margin-bottom: 20px;
         font-size: 50px;
         line-height: 1.1;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 80px;
+        line-height: 1.1;
+      }
+
+      &-mobile {
+        display: inline;
+
+        @include breakpoint-up($bp-laptop) {
+          display: none;
+        }
+      }
+
+      &-desktop {
+        display: none;
+
+        @include breakpoint-up($bp-laptop) {
+          display: inline;
+        }
       }
     }
 
@@ -182,7 +258,7 @@
       color: var(--text-black);
 
       @include breakpoint-up($bp-tablet) {
-        max-width: 526px;
+        max-width: 723px;
         margin-bottom: 32px;
       }
 
@@ -190,11 +266,59 @@
         max-width: 1063px;
         margin-bottom: 40px;
       }
+
+      @include breakpoint-up($bp-desktop) {
+        max-width: 1701px;
+        font-size: 25px;
+        line-height: 1.3;
+      }
     }
 
     &__button {
+      width: 310px;
+      max-width: 100%;
+      margin: 0 auto;
+
+      @include breakpoint-up($bp-tablet) {
+        width: 434px;
+        min-height: 30px;
+      }
+
       @include breakpoint-up($bp-laptop) {
         width: 341px;
+        min-height: 50px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 544px;
+        min-height: 80px;
+      }
+    }
+
+    &__button-text {
+      &--tablet,
+      &--desktop {
+        display: none;
+      }
+
+      @include breakpoint-up($bp-tablet) {
+        &--mobile {
+          display: none;
+        }
+
+        &--tablet {
+          display: inline;
+        }
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        &--tablet {
+          display: none;
+        }
+
+        &--desktop {
+          display: inline;
+        }
       }
     }
 
@@ -214,6 +338,10 @@
         @include breakpoint-up($bp-laptop) {
           height: 397px;
         }
+
+        @include breakpoint-up($bp-desktop) {
+          height: 635px;
+        }
       }
     }
   }
@@ -230,17 +358,10 @@
     }
 
     &__list {
-      display: grid;
-      gap: 20px;
-
-      @include breakpoint-up($bp-tablet) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 38px;
-      }
-
-      @include breakpoint-up($bp-laptop) {
-        gap: 72px;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--color-line-gray);
     }
 
     &__more {
@@ -249,11 +370,19 @@
       @include breakpoint-up($bp-tablet) {
         width: 689px;
         margin-top: 40px;
+        min-height: 30px;
       }
 
       @include breakpoint-up($bp-laptop) {
         width: 1081px;
-        margin-top: 60px;
+        margin-top: 30px;
+        min-height: 60px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 1730px;
+        margin-top: 48px;
+        min-height: 96px;
       }
     }
   }
@@ -262,16 +391,62 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
     max-width: 330px;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding: 20px 0;
     border-bottom: 1px solid var(--color-line-gray);
 
     @include breakpoint-up($bp-tablet) {
-      max-width: none;
-      margin: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
+      display: grid;
+      grid-template-columns: 304px 344px;
+      align-items: end;
+      gap: 40px;
+      max-width: 688px;
+      padding: 30px 0;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      grid-template-columns: 475px 543px;
+      gap: 63px;
+      max-width: 1081px;
+    }
+
+    @include breakpoint-up($bp-desktop) {
+      grid-template-columns: 760px 869px;
+      gap: 99px;
+      max-width: 1728px;
+      padding: 48px 0;
+    }
+
+    &--secondary {
+      @include breakpoint-up($bp-tablet) {
+        grid-template-columns: 344px 304px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        grid-template-columns: 543px 475px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        grid-template-columns: 869px 760px;
+      }
+
+      .development-project-card__media {
+        @include breakpoint-up($bp-tablet) {
+          order: 1;
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+
+      .development-project-card__content {
+        @include breakpoint-up($bp-tablet) {
+          order: 2;
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
     }
 
     &__media {
@@ -280,7 +455,16 @@
       margin: 0 auto;
 
       @include breakpoint-up($bp-tablet) {
-        width: 100%;
+        width: 344px;
+        margin: 0 0 0 auto;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        width: 543px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 869px;
       }
 
       img {
@@ -290,11 +474,15 @@
         object-fit: cover;
 
         @include breakpoint-up($bp-tablet) {
-          height: 253px;
+          height: 386px;
         }
 
         @include breakpoint-up($bp-laptop) {
-          height: 397px;
+          height: 534px;
+        }
+
+        @include breakpoint-up($bp-desktop) {
+          height: 854px;
         }
       }
     }
@@ -307,6 +495,18 @@
       font-size: 20px;
       line-height: 1.1;
       letter-spacing: 0.4px;
+
+      @include breakpoint-up($bp-laptop) {
+        right: 20px;
+        bottom: 20px;
+        font-size: 28px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        right: 30px;
+        bottom: 30px;
+        font-size: 44px;
+      }
     }
 
     &__content {
@@ -314,7 +514,16 @@
       margin: 0 auto;
 
       @include breakpoint-up($bp-tablet) {
-        width: 100%;
+        width: 304px;
+        margin: 0;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        width: 475px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 760px;
       }
     }
 
@@ -325,10 +534,25 @@
       font-weight: 300;
       line-height: 1.2;
       color: var(--text-gray-5);
+    }
+
+    &__type--mobile {
+      @include breakpoint-up($bp-tablet) {
+        display: none;
+      }
+    }
+
+    &__type--desktop {
+      display: none;
 
       @include breakpoint-up($bp-laptop) {
+        display: block;
         margin-bottom: 15px;
         font-size: 20px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 32px;
       }
     }
 
@@ -347,30 +571,75 @@
         line-height: 1.1;
       }
 
+      @include breakpoint-up($bp-desktop) {
+        font-size: 44px;
+        line-height: 1.1;
+      }
+
       a {
         color: inherit;
         text-decoration: none;
       }
     }
 
+    &__reference {
+      display: none;
+      margin: 0 0 23px;
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-gray-5);
+
+      @include breakpoint-up($bp-tablet) {
+        display: block;
+      }
+
+      @include breakpoint-up($bp-laptop) {
+        margin-bottom: 32px;
+        font-size: 16px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        margin-bottom: 54px;
+        font-size: 25px;
+        line-height: 1.3;
+      }
+    }
+
     &__description {
       display: none;
-      margin: 0 0 24px;
+      margin: 0;
       font-family: var(--font-secondary);
       font-size: 14px;
       font-weight: 300;
       line-height: 1.3;
       color: var(--text-gray-90);
 
-      @include breakpoint-up($bp-tablet) {
-        display: block;
-        margin-bottom: 24px;
+      &--tablet {
+        @include breakpoint-up($bp-tablet) {
+          display: block;
+          margin-bottom: 25px;
+        }
+
+        @include breakpoint-up($bp-laptop) {
+          display: none;
+        }
       }
 
-      @include breakpoint-up($bp-laptop) {
-        margin-bottom: 48px;
-        font-size: 16px;
-        line-height: 1.3;
+      &--desktop {
+        @include breakpoint-up($bp-laptop) {
+          display: block;
+          margin-bottom: 48px;
+          font-size: 16px;
+          line-height: 1.3;
+        }
+
+        @include breakpoint-up($bp-desktop) {
+          margin-bottom: 64px;
+          font-size: 25px;
+          line-height: 1.3;
+        }
       }
     }
 
@@ -389,8 +658,9 @@
 
       @include breakpoint-up($bp-tablet) {
         grid-template-columns: 1fr;
-        gap: 10px;
-        margin-bottom: 28px;
+        width: 134px;
+        gap: 6px;
+        margin-bottom: 40px;
       }
 
       @include breakpoint-up($bp-laptop) {
@@ -398,6 +668,18 @@
         gap: 10px;
         margin-bottom: 50px;
         font-size: 16px;
+
+        li:nth-child(-n + 2) {
+          display: none;
+        }
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 459px;
+        gap: 16px;
+        margin-bottom: 72px;
+        font-size: 25px;
+        line-height: 1.3;
       }
     }
 
@@ -410,10 +692,15 @@
       @include breakpoint-up($bp-tablet) {
         flex-direction: column;
         align-items: flex-start;
+        gap: 20px;
       }
 
       @include breakpoint-up($bp-laptop) {
         align-items: stretch;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        gap: 32px;
       }
     }
 
@@ -423,11 +710,16 @@
       line-height: 1.1;
 
       @include breakpoint-up($bp-tablet) {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       @include breakpoint-up($bp-laptop) {
         font-size: 28px;
+        line-height: 1.1;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 44px;
         line-height: 1.1;
       }
     }
@@ -461,13 +753,13 @@
       }
 
       @include breakpoint-up($bp-tablet) {
-        width: 100%;
+        width: 304px;
         min-height: 30px;
         border: 1px solid var(--text-black);
         font-family: var(--font-primary);
-        font-size: 10px;
-        line-height: 1.5;
-        letter-spacing: 0.5px;
+        font-size: 12px;
+        line-height: 1.15;
+        letter-spacing: 0.24px;
       }
 
       @include breakpoint-up($bp-laptop) {
@@ -475,6 +767,13 @@
         min-height: 50px;
         font-size: 16px;
         letter-spacing: 0.8px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        width: 760px;
+        min-height: 80px;
+        font-size: 25px;
+        letter-spacing: 1.25px;
       }
     }
 
@@ -489,36 +788,50 @@
     padding: 100px 0 120px;
 
     @include breakpoint-up($bp-tablet) {
-      padding: 120px 0 140px;
+      padding: 100px 0 120px;
     }
 
     @include breakpoint-up($bp-laptop) {
-      padding: 0 0 140px;
+      padding: 140px 0 160px;
+    }
+
+    @include breakpoint-up($bp-desktop) {
+      padding: 160px 0 200px;
     }
 
     &__list {
       border-top: 1px solid var(--color-line-gray);
       border-bottom: 1px solid var(--color-line-gray);
 
-      @include breakpoint-up($bp-laptop) {
+      @include breakpoint-up($bp-tablet) {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 23px;
+      }
+
+      @include breakpoint-up($bp-laptop) {
         column-gap: 59px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        column-gap: 96px;
       }
     }
 
     &__cta {
       display: none;
 
-      @include breakpoint-up($bp-tablet) {
+      @include breakpoint-up($bp-laptop) {
         display: inline-flex;
-        width: 689px;
-        margin: 40px auto 0;
+        width: 1081px;
+        min-height: 60px;
+        margin-top: 30px;
       }
 
-      @include breakpoint-up($bp-laptop) {
-        width: 1081px;
-        margin-top: 30px;
+      @include breakpoint-up($bp-desktop) {
+        width: 1730px;
+        min-height: 96px;
+        margin-top: 48px;
       }
     }
   }
@@ -531,17 +844,35 @@
       border-bottom: 0;
     }
 
-    @include breakpoint-up($bp-laptop) {
-      padding: 35px 0 19px;
+    @include breakpoint-up($bp-tablet) {
+      padding: 20px 0 0;
       border-bottom: 0;
+    }
+
+    @include breakpoint-up($bp-laptop) {
+      padding: 35px 0 0;
+    }
+
+    @include breakpoint-up($bp-desktop) {
+      padding: 56px 0 0;
     }
 
     &__head {
       margin-bottom: 40px;
 
+      @include breakpoint-up($bp-tablet) {
+        min-height: 81px;
+        margin-bottom: 54px;
+      }
+
       @include breakpoint-up($bp-laptop) {
         min-height: 123px;
         margin-bottom: 84px;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        min-height: 192px;
+        margin-bottom: 128px;
       }
     }
 
@@ -555,6 +886,10 @@
         margin-bottom: 30px;
         font-size: 28px;
       }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 44px;
+      }
     }
 
     &__title {
@@ -564,6 +899,11 @@
 
       @include breakpoint-up($bp-laptop) {
         font-size: 28px;
+        line-height: 1.1;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 44px;
         line-height: 1.1;
       }
     }
@@ -578,6 +918,11 @@
 
       @include breakpoint-up($bp-laptop) {
         font-size: 16px;
+        line-height: 1.3;
+      }
+
+      @include breakpoint-up($bp-desktop) {
+        font-size: 25px;
         line-height: 1.3;
       }
     }

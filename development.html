@@ -8,6 +8,7 @@
 	<script type="module" src="http://localhost:3000/assets/src/js/main.js"></script>
 </head>
 <body>
+	<div data-include="partials/header.html"></div>
 	<main class="archive-development">
 		<section class="development-hero">
 			<div class="container">
@@ -20,9 +21,16 @@
 				</nav>
 				<div class="development-hero__intro">
 					<p class="development-hero__eyebrow">Девелоперские проекты</p>
-					<h1 class="development-hero__title">в Марбелье, где капитал работает в реальных активах</h1>
+					<h1 class="development-hero__title">
+						<span class="development-hero__title-mobile">в Марбелье, где капитал работает в реальных активах</span>
+						<span class="development-hero__title-desktop">Девелоперские проекты в Марбелье, где капитал работает в реальных активах</span>
+					</h1>
 					<p class="development-hero__stats">15 лет работы в Испании / 5 000+ закрытых сделок / 200+ млн € под управлением / LPA и международные премии</p>
-					<a class="development-button development-button--ghost development-hero__button" href="./contacts.html">Получить презентацию проекта</a>
+					<a class="development-button development-button--ghost development-hero__button" href="./contacts.html">
+						<span class="development-hero__button-text development-hero__button-text--mobile">Начните подбор недвижимости</span>
+						<span class="development-hero__button-text development-hero__button-text--tablet">Начните подбор недвижимости по ключевым параметрам</span>
+						<span class="development-hero__button-text development-hero__button-text--desktop">Получить презентацию проекта</span>
+					</a>
 				</div>
 			</div>
 			<div class="development-hero__media">
@@ -33,7 +41,11 @@
 		<section class="development-projects">
 			<div class="container">
 				<div class="development-section-heading">
-					<h2 class="development-section-heading__title">Проекты, реализованные и находящиеся в управлении InmoLux Group</h2>
+					<h2 class="development-section-heading__title">
+						<span class="development-section-heading__title-mobile">Проекты, реализованные<br>и находящиеся</span>
+						<span class="development-section-heading__title-desktop">Проекты, реализованные<br>и находящиеся в управлении InmoLux Group</span>
+					</h2>
+					<p class="development-section-heading__lead">в управлении InmoLux Group</p>
 				</div>
 				<div class="development-projects__list">
 					<article class="development-project-card">
@@ -42,10 +54,15 @@
 							<div class="development-project-card__counter">01/10</div>
 						</div>
 						<div class="development-project-card__content">
-							<p class="development-project-card__type">Таунхаус</p>
-							<h3 class="development-project-card__title"><a href="./single-investment.html">Malaga Nueva Andalucia</a></h3>
-							<p class="development-project-card__description">Девелоперский проект в престижной локации Марбельи с фокусом на ликвидность и премиальный сегмент.</p>
+							<p class="development-project-card__type development-project-card__type--mobile">Вилла</p>
+							<p class="development-project-card__type development-project-card__type--desktop">Таунхаус</p>
+							<h3 class="development-project-card__title"><a href="./single-investment.html">Malaga Nueva Andalucia,</a></h3>
+							<p class="development-project-card__reference">REF. 4314</p>
+							<p class="development-project-card__description development-project-card__description--tablet">8 роскошных вилл в нескольких минутах ходьбы от знаменитого порта Пуэрто-Банус</p>
+							<p class="development-project-card__description development-project-card__description--desktop">Девелоперский проект в престижной локации Марбельи с фокусом на ликвидность и премиальный сегмент.</p>
 							<ul class="development-project-card__meta">
+								<li>Спальни / 6</li>
+								<li>Ванные / 7</li>
 								<li>Площадь / 1071 m²</li>
 								<li>Терраса / 356 m²</li>
 								<li>Участок / 2090 m²</li>
@@ -63,15 +80,18 @@
 							<div class="development-project-card__counter">02/10</div>
 						</div>
 						<div class="development-project-card__content">
-							<p class="development-project-card__type">Вилла</p>
+							<p class="development-project-card__type development-project-card__type--mobile">Вилла</p>
+							<p class="development-project-card__type development-project-card__type--desktop">Таунхаус</p>
 							<h3 class="development-project-card__title"><a href="./single-investment.html">Malaga San Pedro de Alcantara, Guadalmina Alta</a></h3>
-							<p class="development-project-card__description">Проект с понятной структурой входа, высоким качеством актива и потенциалом роста стоимости после завершения девелопмента.</p>
+							<p class="development-project-card__reference">REF. 4235</p>
+							<p class="development-project-card__description development-project-card__description--tablet">Duplex San Pedro de Alcantara</p>
+							<p class="development-project-card__description development-project-card__description--desktop">Проект с понятной структурой входа, высоким качеством актива и потенциалом роста стоимости после завершения девелопмента.</p>
 							<ul class="development-project-card__meta">
 								<li>Спальни / 6</li>
-								<li>Терраса / 356 m²</li>
 								<li>Ванные / 7</li>
-								<li>Участок / 2090 m²</li>
 								<li>Площадь / 1071 m²</li>
+								<li>Терраса / 356 m²</li>
+								<li>Участок / 2090 m²</li>
 								<li>Жилая площадь / 1026 m²</li>
 							</ul>
 							<div class="development-project-card__footer">
@@ -88,7 +108,7 @@
 		<section class="development-process">
 			<div class="container">
 				<div class="development-section-heading development-section-heading--narrow">
-					<h2 class="development-section-heading__title">Структурированный вход в девелоперские проекты InmoLux Group</h2>
+					<h2 class="development-section-heading__title">Структурированный вход<br>в девелоперские проекты<br>InmoLux Group</h2>
 				</div>
 				<div class="development-process__list">
 					<article class="development-step">
@@ -117,5 +137,16 @@
 			</div>
 		</section>
 	</main>
+	<div data-include="partials/footer.html"></div>
+	<script>
+		document.addEventListener('DOMContentLoaded', async () => {
+			const blocks = document.querySelectorAll('[data-include]');
+			await Promise.all([...blocks].map(async block => {
+				const url = block.getAttribute('data-include');
+				const resp = await fetch(url);
+				block.innerHTML = resp.ok ? await resp.text() : `<!-- ${url} not found -->`;
+			}));
+		});
+	</script>
 </body>
 </html>

@@ -1,10 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ==========================================================================
-// SINGLE POST (BLOG & GUIDE) STYLES
-// ==========================================================================
-
 .single-post,
 .single-guide {
   background-color: var(--color-white);

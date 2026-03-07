@@ -10,77 +10,7 @@
 </head>
 
 <body class="home" x-data="{ mobileMenuOpen: false, scrolledHeader: false }" :class="mobileMenuOpen ? 'overflow-hidden' : ''">
-	<header class="site-header site-header--light" :class="{ 'site-header--scrolled': scrolledHeader }">
-		<div class="header-desktop show-from-laptop">
-			<div class="header-desktop__row header-desktop__row--main">
-				<div class="header-desktop__left">
-					<nav class="main-navigation" aria-label="Основная навигация">
-						<ul class="main-menu">
-							<li><a href="#tasks-title">продать</a></li>
-							<li><a href="#tasks-title">купить</a></li>
-							<li><a href="#tasks-title">Инвестировать</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="header-desktop__center">
-					<a class="header-desktop__logo" href="#" aria-label="InMolux">
-						<img class="header-desktop__logo-img header-desktop__logo-img--default" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
-						<img class="header-desktop__logo-img header-desktop__logo-img--scrolled" src="https://dummyimage.com/300x50/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
-					</a>
-				</div>
-				<div class="header-desktop__right">
-					<a class="header-desktop__phone" href="tel:+34609868314">+34 609 868 314</a>
-					<div class="header-desktop__lang">
-						<div class="lang-switcher">
-							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
-						</div>
-					</div>
-					<a class="header-desktop__cta" href="#inquiry2">Consultation</a>
-				</div>
-			</div>
-			<div class="header-desktop__separator"></div>
-			<div class="header-desktop__row header-desktop__row--sub">
-				<div class="header-desktop__subnav">
-					<ul class="sub-menu-list">
-						<li><a href="#solutions-title">Проекты</a></li>
-						<li><a href="#locations-title">Каталог</a></li>
-						<li><a href="#numbers-title">О нас</a></li>
-						<li><a href="#inquiry2">Контакты</a></li>
-					</ul>
-				</div>
-				<button class="header-desktop__menu-toggle" type="button" @click="mobileMenuOpen = !mobileMenuOpen">
-					<span class="header-desktop__menu-label">меню</span>
-					<span class="header-desktop__hamburger"><span></span><span></span></span>
-				</button>
-			</div>
-		</div>
-		<div class="header-mobile hide-from-laptop">
-			<div class="header-mobile__row">
-				<div class="header-mobile__left">
-					<button class="header-mobile__burger" type="button" aria-label="Открыть меню" @click="mobileMenuOpen = !mobileMenuOpen">
-						<span class="header-mobile__burger-lines">
-							<svg viewBox="0 0 25 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H25" stroke="currentColor"/><path d="M0 9H25" stroke="currentColor"/></svg>
-						</span>
-					</button>
-					<div class="header-mobile__lang">
-						<div class="lang-switcher">
-							<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
-						</div>
-					</div>
-				</div>
-				<div class="header-mobile__center">
-					<a class="header-mobile__logo" href="#" aria-label="InMolux">
-						<img class="header-mobile__logo-img header-mobile__logo-img--default" src="https://dummyimage.com/200x40/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
-						<img class="header-mobile__logo-img header-mobile__logo-img--scrolled" src="https://dummyimage.com/200x40/ffffff/41545c.png&text=INMOLUX" alt="InMolux">
-					</a>
-				</div>
-				<div class="header-mobile__right">
-					<a class="header-mobile__cta" href="#inquiry2">Consultation</a>
-				</div>
-			</div>
-			<div class="header-mobile__separator"></div>
-		</div>
-	</header>
+	<div data-include="partials/header.html"></div>
 	<section class="hero" aria-labelledby="hero-title">
 		<div class="hero__bg">
 			<img class="hero__bg-img" src="https://dummyimage.com/1920x1080/41545c/41545c.png&text=Marbella+Hero" alt="Недвижимость Марбельи">
@@ -190,7 +120,7 @@
 					<div class="tasks__card-body">
 						<div class="tasks__card-text-top">
 							<p class="tasks__card-short">для тех, кто хочет продать недвижимость достойно и без потери в цене</p>
-							<p class="tasks__card-desc">Вы получаете оценку объекта на основе реальных сделок, мы подготавливаем его к продаже и самостоятельно ведём работу с покупателями до результата.</p>
+							<p class="tasks__card-desc">Вы получаете оценку объекта на основе реальных сделок, мы подготавливаем его к продаже и самостоятально ведём работу с покупателями до результата.</p>
 						</div>
 						<div class="tasks__card-image"><img src="https://dummyimage.com/720x960/cabfb3/cabfb3.png&text=Owner" alt="Продажа недвижимости"></div>
 						<div class="tasks__card-btn-wrap">
@@ -395,7 +325,7 @@
 		<section class="testimonials" aria-labelledby="testimonials-title">
 			<div class="testimonials__header">
 				<h2 class="testimonials__title" id="testimonials-title">Успешные сделки</h2>
-				<p class="testimonials__subtitle">Отзывы клиентов, которые пришли по рекомендации и прошли сделку с одной командой</p>
+				<p class="testimonials__subtitle">Отзывы клиентов, которые пришли по рекомендациям и прошли сделку с одной командой</p>
 			</div>
 			<div class="testimonials__grid">
 				<article class="testimonials__card"><div class="testimonials__card-avatar"></div><h3 class="testimonials__card-name">Andrea Arcia</h3><p class="testimonials__card-title">Обратился за покупкой жилья из Украины</p><p class="testimonials__card-text">С самого первого дня я всем говорила, что из четырёх вариантов продажи моего дома в Аликанте мне очень повезло выбрать именно Inmolux. Команда сопровождала меня, направляла и терпеливо выдержала весь процесс до оформления документов.</p><p class="testimonials__card-date">03.04.2025</p></article>
@@ -466,92 +396,16 @@
 			</ul>
 		</section>
 	</main>
-	<footer class="site-footer">
-		<div class="site-footer__inner">
-			<div class="site-footer__top">
-				<div class="site-footer__col site-footer__col--brand">
-					<a class="site-footer__logo" href="#" aria-label="InMolux">
-						<img class="site-footer__logo-img" src="https://dummyimage.com/300x50/41545c/ffffff.png&text=INMOLUX" alt="InMolux">
-					</a>
-					<div class="site-footer__block">
-						<span class="site-footer__label">Недвижимость Марбельи</span>
-						<span class="site-footer__value">Инвестиции, покупка, девелопмент</span>
-					</div>
-					<div class="site-footer__block">
-						<span class="site-footer__label">Социальные сети</span>
-						<div class="site-footer__socials">
-							<a class="site-footer__social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
-							<a class="site-footer__social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M13 21V13H16L16.5 9H13V7C13 5.9 13.3 5 14.9 5H16.6V1.4C16.3 1.3 15.2 1 13.8 1C10.8 1 8.8 2.8 8.8 6.2V9H5.5V13H8.8V21H13Z" fill="currentColor"/></svg></a>
-							<a class="site-footer__social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9H10V21H6V9ZM8 3C9.1 3 10 3.9 10 5C10 6.1 9.1 7 8 7C6.9 7 6 6.1 6 5C6 3.9 6.9 3 8 3ZM12 9H15.8V10.7H15.9C16.4 9.7 17.7 8.7 19.6 8.7C23.4 8.7 24 11.1 24 14.3V21H20V15.1C20 13.7 20 11.9 18.1 11.9C16.2 11.9 15.9 13.4 15.9 15V21H12V9Z" fill="currentColor"/></svg></a>
-						</div>
-					</div>
-				</div>
-				<div class="site-footer__col site-footer__col--contacts">
-					<div class="site-footer__block">
-						<span class="site-footer__label">Телефон</span>
-						<a class="site-footer__value site-footer__value--link" href="tel:+34609868314">+34 609 868 314</a>
-						<a class="site-footer__value site-footer__value--link" href="tel:+34952770782">+34 952 770 782</a>
-					</div>
-					<div class="site-footer__block">
-						<span class="site-footer__label">Электронная почта</span>
-						<a class="site-footer__value site-footer__value--link" href="mailto:info@inmoluxgroup.com">info@inmoluxgroup.com</a>
-					</div>
-				</div>
-				<div class="site-footer__col site-footer__col--address">
-					<div class="site-footer__block">
-						<span class="site-footer__label">Адрес</span>
-						<address class="site-footer__value">Авеню Рикардо Сориано, 55.<br>29602 Марбелья, Малага.</address>
-					</div>
-					<div class="site-footer__block">
-						<span class="site-footer__label">График работы</span>
-						<span class="site-footer__value">пн-вс 08:00 – 22:00</span>
-					</div>
-				</div>
-			</div>
-			<div class="site-footer__nav-row">
-				<ul class="site-footer__menu">
-					<li><a href="#tasks-title">Покупателям</a></li>
-					<li><a href="#tasks-title">Продавцам</a></li>
-					<li><a href="#solutions-title">Инвестиции</a></li>
-					<li><a href="#solutions-title">Проекты</a></li>
-					<li><a href="#numbers-title">О нас</a></li>
-					<li><a href="#inquiry2">Контакты</a></li>
-				</ul>
-				<div class="site-footer__lang">
-					<div class="lang-switcher">
-						<button class="lang-switcher__current" type="button">EN <span class="lang-switcher__arrow">▾</span></button>
-					</div>
-				</div>
-			</div>
-			<div class="site-footer__map-row">
-				<div class="site-footer__map-left">
-					<button class="site-footer__directions" type="button">Как к нам добраться</button>
-					<a class="site-footer__cta-btn" href="#inquiry2">Задать вопросы</a>
-				</div>
-				<div class="site-footer__map-right">
-					<div class="site-footer__map-embed">
-						<img src="https://dummyimage.com/1200x534/e8e8e8/e8e8e8.png&text=Office+Map" alt="Office map">
-					</div>
-				</div>
-			</div>
-			<div class="site-footer__payments-row">
-				<div class="site-footer__payments">
-					<span class="site-footer__pay-icon">VISA</span>
-					<span class="site-footer__pay-icon">MC</span>
-					<span class="site-footer__pay-icon">SWIFT</span>
-					<span class="site-footer__pay-icon">USDT</span>
-					<span class="site-footer__pay-icon">BTC</span>
-				</div>
-			</div>
-			<div class="site-footer__legal-row">
-				<div class="site-footer__copyright">© 2019–2025 InmoLux</div>
-				<div class="site-footer__legal-links">
-					<a href="#">Политика конфиденциальности</a>
-					<a href="#">Политика использования файлов cookie</a>
-				</div>
-				<div class="site-footer__credits">Сайт разработан</div>
-			</div>
-		</div>
-	</footer>
+	<div data-include="partials/footer.html"></div>
+	<script>
+		document.addEventListener('DOMContentLoaded', async () => {
+			const blocks = document.querySelectorAll('[data-include]');
+			await Promise.all([...blocks].map(async block => {
+				const url = block.getAttribute('data-include');
+				const resp = await fetch(url);
+				block.innerHTML = resp.ok ? await resp.text() : `<!-- ${url} not found -->`;
+			}));
+		});
+	</script>
 </body>
 </html>

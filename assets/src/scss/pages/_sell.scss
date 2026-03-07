@@ -1,12 +1,7 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ==========================================================================
-// SELL PAGE STYLES
-// ==========================================================================
-
 .page-sell {
-  // Hero Section
   .sell-hero {
     position: relative;
     padding-top: var(--header-height-desktop);
@@ -72,7 +67,6 @@
     }
   }
 
-  // Stats in Hero
   .sell-stats {
     display: grid;
     grid-template-columns: 1fr;
@@ -105,7 +99,6 @@
     }
   }
 
-  // Expert Section
   .sell-expert {
     &__layout {
       display: grid;
@@ -152,7 +145,6 @@
     }
   }
 
-  // Strategy Steps
   .sell-strategy {
     &__grid {
       display: grid;

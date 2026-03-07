@@ -1,7 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// General Page Styles
 .page-article {
   padding-top: 120px;
   padding-bottom: 96px;
@@ -105,7 +104,6 @@
   }
 }
 
-// 404 Page Styles
 .error-404 {
   padding-top: 120px;
   padding-bottom: 120px;

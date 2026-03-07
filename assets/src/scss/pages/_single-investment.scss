@@ -1,10 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-// ==========================================================================
-// SINGLE INVESTMENT STYLES
-// ==========================================================================
-
 .single-investment {
   background-color: var(--color-white);
   color: var(--text-black);
@@ -78,7 +74,6 @@
     }
   }
 
-  // Hero Section
   .sinv-hero {
     padding: 26px 0 80px;
 
@@ -211,7 +206,6 @@
     }
   }
 
-  // Concept Section
   .sinv-concept {
     padding: 80px 0;
 
@@ -271,7 +265,6 @@
     }
   }
 
-  // Location Section
   .sinv-location {
     padding: 80px 0;
     border-top: 1px solid var(--color-line-gray);
@@ -341,7 +334,6 @@
     }
   }
 
-  // Details Section
   .sinv-details {
     padding: 80px 0;
 
